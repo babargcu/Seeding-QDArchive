@@ -1,0 +1,43 @@
+extension,category,full_name,tool,format_spec,notes
+.qdpx,QDA - REFI,REFI-QDA Project Exchange,ATLAS.ti / Dedoose / f4analyse / MAXQDA / NVivo / QDA Miner / Quirkos / Transana,https://www.qdasoftware.org/,"ZIP archive containing project.qde (XML) + sources/ folder. Interoperability standard for full project exchange."
+.qdc,QDA - REFI,REFI-QDA Codebook Exchange,ATLAS.ti / Dedoose / f4analyse / MAXQDA / NVivo / QDA Miner / Quirkos / Transana,https://www.qdasoftware.org/,"XML file for exchanging code systems (code trees + memos) between tools. Launched March 2018. Validated by XSD schema."
+.qde,QDA - REFI,REFI-QDA Project XML (internal),All REFI-supporting tools,https://www.qdasoftware.org/,"XML file found inside a .qdpx ZIP archive (named project.qde). Not normally distributed standalone."
+.nvp,QDA,NVivo Project (legacy Windows),NVivo <=11,,Windows-only NVivo project file. Binary format.
+.nvpx,QDA,NVivo Project,NVivo 12+,,Cross-platform NVivo project file. Can export to .qdpx.
+.atlproj,QDA,ATLAS.ti Project,ATLAS.ti 8+,,ZIP-based project bundle. Can export to .qdpx.
+.atlcb,QDA,ATLAS.ti Cloud Bundle,ATLAS.ti Cloud,,Cloud project backup format.
+.mx18,QDA,MAXQDA 18 Project,MAXQDA 18,,MAXQDA proprietary project format.
+.mx19,QDA,MAXQDA 19 Project,MAXQDA 19,,
+.mx20,QDA,MAXQDA 20 Project,MAXQDA 20,,
+.mx22,QDA,MAXQDA 22 Project,MAXQDA 22,,
+.mxd,QDA,MAXQDA Data file (legacy),MAXQDA <18,,Legacy data file; superseded by versioned .mx* formats.
+.qdp,QDA,QDA Miner Project,QDA Miner (Provalis Research),,Native project format for QDA Miner 1.x–4.x. Can import .qdpx.
+.qlt,QDA,QDA Miner Lite Project,QDA Miner Lite 3.0+,,New format introduced in QDA Miner Lite 3.0; QDA Miner 2023+ can import .qlt files.
+.f4a,QDA,f4analyse Project,f4analyse / f4x,,German qualitative analysis tool. Supports REFI-QDA export.
+.quirkos,QDA,Quirkos Project,Quirkos,,Simple visual QDA tool. Supports REFI-QDA export to .qdpx.
+.tns,QDA,Transana Project,Transana,,Video/audio qualitative analysis tool. Supports REFI-QDA export.
+.qda,QDA,Generic QDA file,Various,,Catch-all extension used by some older or less common tools.
+.pdf,Qualitative - Text,Portable Document Format,Any,,Research articles; published transcripts; most common format for open qualitative data.
+.docx,Qualitative - Text,Word Document (OOXML),Microsoft Word / LibreOffice,,Interview transcripts; field notes; the most common raw transcript format.
+.doc,Qualitative - Text,Word Document (legacy),Microsoft Word,,Older transcripts; pre-2007 Word format.
+.rtf,Qualitative - Text,Rich Text Format,Any,,Cross-application text; used for transcripts.
+.txt,Qualitative - Text,Plain Text,Any,,Raw transcripts; simplest open format.
+.odt,Qualitative - Text,OpenDocument Text,LibreOffice / Any,,Open standard text format.
+.epub,Qualitative - Text,Electronic Publication,Any,,Published research books / reports.
+.html,Qualitative - Text,HTML Document,Any,,Web-scraped or web-published qualitative reports.
+.mp3,Qualitative - Audio,MPEG Audio Layer III,Any,,Interview audio recordings. URL recorded; not downloaded by default.
+.wav,Qualitative - Audio,Waveform Audio,Any,,Uncompressed audio; large files. URL recorded; not downloaded.
+.m4a,Qualitative - Audio,MPEG-4 Audio,Apple / Any,,Compressed audio. URL recorded; not downloaded.
+.ogg,Qualitative - Audio,Ogg Vorbis Audio,Any,,Open audio format. URL recorded; not downloaded.
+.flac,Qualitative - Audio,Free Lossless Audio Codec,Any,,Lossless audio. URL recorded; not downloaded.
+.mp4,Qualitative - Video,MPEG-4 Video,Any,,Interview or focus group video. URL recorded; not downloaded by default.
+.avi,Qualitative - Video,Audio Video Interleave,Any,,URL recorded; not downloaded.
+.mov,Qualitative - Video,QuickTime Movie,Apple / Any,,URL recorded; not downloaded.
+.mkv,Qualitative - Video,Matroska Video,Any,,URL recorded; not downloaded.
+.webm,Qualitative - Video,WebM Video,Any,,URL recorded; not downloaded.
+.xlsx,Qualitative - Structured,Excel Spreadsheet (OOXML),Microsoft Excel / LibreOffice,,Coded data exports from QDA tools; structured metadata.
+.xls,Qualitative - Structured,Excel Spreadsheet (legacy),Microsoft Excel,,
+.csv,Qualitative - Structured,Comma-Separated Values,Any,,Coded data exports; most interoperable structured format.
+.ods,Qualitative - Structured,OpenDocument Spreadsheet,LibreOffice / Any,,Open standard spreadsheet format.
+.json,Qualitative - Structured,JSON,Any,,Increasingly used for structured qualitative exports from web tools.
+.xml,Qualitative - Structured,XML,Any,,Generic XML; includes some QDA exports not covered by .qdc or .qde.

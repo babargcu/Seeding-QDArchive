@@ -1,0 +1,583 @@
+2026-02-20 00:19:22  INFO      Scraping 1 source(s) with up to 4 workers in parallel…
+2026-02-20 00:19:22  INFO      === [Zenodo] Starting scrape ===
+2026-02-20 00:19:22  INFO      [Zenodo] Searching: 'qdpx'
+2026-02-20 00:19:26  INFO      [Zenodo] 'qdpx' → 90 records with open licenses
+2026-02-20 00:19:27  INFO      [Zenodo] Searching: 'refi-qda'
+2026-02-20 00:19:29  INFO      [Zenodo] 'refi-qda' → 11 records with open licenses
+2026-02-20 00:19:30  INFO      [Zenodo] Searching: 'qdc codebook qualitative'
+2026-02-20 00:19:42  INFO      [Zenodo] 'qdc codebook qualitative' → 324 records with open licenses
+2026-02-20 00:19:43  INFO      [Zenodo] Searching: 'NVivo qualitative'
+2026-02-20 00:19:56  INFO      [Zenodo] 'NVivo qualitative' → 338 records with open licenses
+2026-02-20 00:19:57  INFO      [Zenodo] Searching: 'ATLAS.ti qualitative'
+2026-02-20 00:20:09  INFO      [Zenodo] 'ATLAS.ti qualitative' → 337 records with open licenses
+2026-02-20 00:20:10  INFO      [Zenodo] Searching: 'MAXQDA qualitative'
+2026-02-20 00:20:20  INFO      [Zenodo] 'MAXQDA qualitative' → 338 records with open licenses
+2026-02-20 00:20:21  INFO      [Zenodo] Searching: 'QDA Miner qualitative'
+2026-02-20 00:20:33  INFO      [Zenodo] 'QDA Miner qualitative' → 336 records with open licenses
+2026-02-20 00:20:34  INFO      [Zenodo] Searching: 'Quirkos qualitative'
+2026-02-20 00:20:44  INFO      [Zenodo] 'Quirkos qualitative' → 338 records with open licenses
+2026-02-20 00:20:45  INFO      [Zenodo] Searching: 'Dedoose qualitative'
+2026-02-20 00:20:57  INFO      [Zenodo] 'Dedoose qualitative' → 338 records with open licenses
+2026-02-20 00:20:58  INFO      [Zenodo] Searching: 'Transana qualitative'
+2026-02-20 00:21:09  INFO      [Zenodo] 'Transana qualitative' → 338 records with open licenses
+2026-02-20 00:21:10  INFO      [Zenodo] Searching: 'qualitative data analysis'
+2026-02-20 00:21:22  INFO      [Zenodo] 'qualitative data analysis' → 205 records with open licenses
+2026-02-20 00:21:23  INFO      [Zenodo] Searching: 'CAQDAS'
+2026-02-20 00:21:26  INFO      [Zenodo] 'CAQDAS' → 2 records with open licenses
+2026-02-20 00:21:27  INFO      [Zenodo] Searching: 'interview transcript qualitative'
+2026-02-20 00:21:39  INFO      [Zenodo] 'interview transcript qualitative' → 280 records with open licenses
+2026-02-20 00:21:40  INFO      [Zenodo] Searching: 'focus group transcript'
+2026-02-20 00:21:51  INFO      [Zenodo] 'focus group transcript' → 107 records with open licenses
+2026-02-20 00:21:52  INFO      [Zenodo] Searching: 'ethnographic fieldnotes'
+2026-02-20 00:22:03  INFO      [Zenodo] 'ethnographic fieldnotes' → 98 records with open licenses
+2026-02-20 00:22:04  INFO      [Zenodo] Total unique records: 913
+2026-02-20 00:22:07  INFO      [Zenodo] Done — 913 new records inserted (found 913 open-licensed)
+2026-02-20 00:22:07  INFO      CSV exported → C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260219_232207.csv
+2026-02-20 00:22:07  INFO      Pipeline complete — total=913  downloaded=0  sources=1  licenses=7
+2026-02-20 00:57:52  INFO      Scraping 3 source(s) with up to 4 workers in parallel…
+2026-02-20 00:57:52  INFO      === [Zenodo] Starting scrape ===
+2026-02-20 00:57:52  INFO      [Zenodo] Searching: 'qdpx'
+2026-02-20 00:57:52  INFO      === [Dryad] Starting scrape ===
+2026-02-20 00:57:52  INFO      === [Figshare] Starting scrape ===
+2026-02-20 00:57:52  INFO      [Dryad] Searching: 'qdpx'
+2026-02-20 00:57:52  INFO      [Figshare] Searching: 'qdpx'
+2026-02-20 00:57:53  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qdpx&item_type=3&page=1&page_size=25
+2026-02-20 00:57:53  INFO      [Figshare] 'qdpx' → 0 records with open licenses
+2026-02-20 00:57:54  INFO      [Figshare] Searching: 'refi-qda'
+2026-02-20 00:57:54  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=refi-qda&item_type=3&page=1&page_size=25
+2026-02-20 00:57:54  INFO      [Figshare] 'refi-qda' → 0 records with open licenses
+2026-02-20 00:57:55  INFO      [Figshare] Searching: 'qdc codebook qualitative'
+2026-02-20 00:57:55  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qdc+codebook+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:57:55  INFO      [Figshare] 'qdc codebook qualitative' → 0 records with open licenses
+2026-02-20 00:57:56  INFO      [Zenodo] 'qdpx' → 90 records with open licenses
+2026-02-20 00:57:56  WARNING   [Dryad] File list error for doi:10.5061/dryad.7rh4625: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.7rh4625/files
+2026-02-20 00:57:56  WARNING   [Dryad] File list error for doi:10.5061/dryad.r8d4q: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.r8d4q/files
+2026-02-20 00:57:56  WARNING   [Dryad] File list error for doi:10.5061/dryad.2d7b8: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2d7b8/files
+2026-02-20 00:57:56  INFO      [Figshare] Searching: 'NVivo qualitative'
+2026-02-20 00:57:56  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=NVivo+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:57:56  INFO      [Figshare] 'NVivo qualitative' → 0 records with open licenses
+2026-02-20 00:57:57  WARNING   [Dryad] File list error for doi:10.5061/dryad.s3j9074: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.s3j9074/files
+2026-02-20 00:57:57  INFO      [Zenodo] Searching: 'refi-qda'
+2026-02-20 00:57:57  WARNING   [Dryad] File list error for doi:10.5061/dryad.08vv50n: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.08vv50n/files
+2026-02-20 00:57:57  WARNING   [Dryad] File list error for doi:10.5061/dryad.n2q7f: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.n2q7f/files
+2026-02-20 00:57:57  WARNING   [Dryad] File list error for doi:10.5061/dryad.4vg17: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.4vg17/files
+2026-02-20 00:57:57  WARNING   [Dryad] File list error for doi:10.5061/dryad.77b2422: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.77b2422/files
+2026-02-20 00:57:57  INFO      [Figshare] Searching: 'ATLAS.ti qualitative'
+2026-02-20 00:57:58  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=ATLAS.ti+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:57:58  INFO      [Figshare] 'ATLAS.ti qualitative' → 0 records with open licenses
+2026-02-20 00:57:58  WARNING   [Dryad] File list error for doi:10.5061/dryad.9cp3j: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.9cp3j/files
+2026-02-20 00:57:58  WARNING   [Dryad] File list error for doi:10.5061/dryad.r5nf0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.r5nf0/files
+2026-02-20 00:57:58  WARNING   [Dryad] File list error for doi:10.5061/dryad.30mv0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.30mv0/files
+2026-02-20 00:57:58  WARNING   [Dryad] File list error for doi:10.5061/dryad.hf93m: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.hf93m/files
+2026-02-20 00:57:58  WARNING   [Dryad] File list error for doi:10.5061/dryad.gc72v: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.gc72v/files
+2026-02-20 00:57:59  INFO      [Figshare] Searching: 'MAXQDA qualitative'
+2026-02-20 00:57:59  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=MAXQDA+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:57:59  INFO      [Figshare] 'MAXQDA qualitative' → 0 records with open licenses
+2026-02-20 00:57:59  WARNING   [Dryad] File list error for doi:10.5061/dryad.2j27b: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2j27b/files
+2026-02-20 00:57:59  INFO      [Zenodo] 'refi-qda' → 11 records with open licenses
+2026-02-20 00:57:59  WARNING   [Dryad] File list error for doi:10.5061/dryad.3cb81: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.3cb81/files
+2026-02-20 00:57:59  WARNING   [Dryad] File list error for doi:10.5061/dryad.5bk4c: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.5bk4c/files
+2026-02-20 00:57:59  WARNING   [Dryad] File list error for doi:10.5061/dryad.p61vk: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p61vk/files
+2026-02-20 00:57:59  WARNING   [Dryad] File list error for doi:10.5061/dryad.2hr38: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2hr38/files
+2026-02-20 00:58:00  INFO      [Figshare] Searching: 'QDA Miner qualitative'
+2026-02-20 00:58:00  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=QDA+Miner+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:58:00  INFO      [Figshare] 'QDA Miner qualitative' → 0 records with open licenses
+2026-02-20 00:58:00  WARNING   [Dryad] File list error for doi:10.5061/dryad.p8br3r4: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p8br3r4/files
+2026-02-20 00:58:00  INFO      [Zenodo] Searching: 'qdc codebook qualitative'
+2026-02-20 00:58:00  WARNING   [Dryad] File list error for doi:10.5061/dryad.3528sj6: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.3528sj6/files
+2026-02-20 00:58:00  WARNING   [Dryad] File list error for doi:10.5061/dryad.4754j: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.4754j/files
+2026-02-20 00:58:00  WARNING   [Dryad] File list error for doi:10.5061/dryad.d3j00: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.d3j00/files
+2026-02-20 00:58:00  WARNING   [Dryad] File list error for doi:10.5061/dryad.m57sd: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.m57sd/files
+2026-02-20 00:58:01  INFO      [Figshare] Searching: 'Quirkos qualitative'
+2026-02-20 00:58:01  WARNING   [Dryad] File list error for doi:10.5061/dryad.p7c77: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p7c77/files
+2026-02-20 00:58:01  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Quirkos+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:58:01  INFO      [Figshare] 'Quirkos qualitative' → 0 records with open licenses
+2026-02-20 00:58:01  WARNING   [Dryad] File list error for doi:10.5061/dryad.8jb83: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.8jb83/files
+2026-02-20 00:58:02  INFO      [Figshare] Searching: 'Dedoose qualitative'
+2026-02-20 00:58:02  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Dedoose+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:58:02  INFO      [Figshare] 'Dedoose qualitative' → 0 records with open licenses
+2026-02-20 00:58:03  INFO      [Figshare] Searching: 'Transana qualitative'
+2026-02-20 00:58:03  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Transana+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:58:03  INFO      [Figshare] 'Transana qualitative' → 0 records with open licenses
+2026-02-20 00:58:04  WARNING   [Dryad] File list error for doi:10.5061/dryad.hq68q: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.hq68q/files
+2026-02-20 00:58:04  INFO      [Figshare] Searching: 'qualitative data analysis'
+2026-02-20 00:58:04  WARNING   [Dryad] File list error for doi:10.5061/dryad.mh67v: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.mh67v/files
+2026-02-20 00:58:04  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qualitative+data+analysis&item_type=3&page=1&page_size=25
+2026-02-20 00:58:04  INFO      [Figshare] 'qualitative data analysis' → 0 records with open licenses
+2026-02-20 00:58:04  WARNING   [Dryad] File list error for doi:10.5061/dryad.43bv0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.43bv0/files
+2026-02-20 00:58:04  WARNING   [Dryad] File list error for doi:10.5061/dryad.jq285: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jq285/files
+2026-02-20 00:58:04  WARNING   [Dryad] File list error for doi:10.5061/dryad.2gp4g: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2gp4g/files
+2026-02-20 00:58:05  WARNING   [Dryad] File list error for doi:10.5061/dryad.n726pq6: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.n726pq6/files
+2026-02-20 00:58:05  INFO      [Figshare] Searching: 'CAQDAS'
+2026-02-20 00:58:05  WARNING   [Dryad] File list error for doi:10.5061/dryad.fd612: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.fd612/files
+2026-02-20 00:58:05  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=CAQDAS&item_type=3&page=1&page_size=25
+2026-02-20 00:58:05  INFO      [Figshare] 'CAQDAS' → 0 records with open licenses
+2026-02-20 00:58:05  WARNING   [Dryad] File list error for doi:10.5061/dryad.qp0qv: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.qp0qv/files
+2026-02-20 00:58:05  WARNING   [Dryad] File list error for doi:10.5061/dryad.rh07b: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.rh07b/files
+2026-02-20 00:58:06  WARNING   [Dryad] File list error for doi:10.5061/dryad.q530s: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.q530s/files
+2026-02-20 00:58:06  WARNING   [Dryad] File list error for doi:10.5061/dryad.216tp: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.216tp/files
+2026-02-20 00:58:06  INFO      [Figshare] Searching: 'interview transcript qualitative'
+2026-02-20 00:58:06  WARNING   [Dryad] File list error for doi:10.5061/dryad.45pv2: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.45pv2/files
+2026-02-20 00:58:06  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=interview+transcript+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 00:58:06  INFO      [Figshare] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 00:58:06  WARNING   [Dryad] File list error for doi:10.5061/dryad.s9v06: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.s9v06/files
+2026-02-20 00:58:06  WARNING   [Dryad] File list error for doi:10.5061/dryad.1nt24m0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.1nt24m0/files
+2026-02-20 00:58:07  WARNING   [Dryad] File list error for doi:10.5061/dryad.dd00m: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.dd00m/files
+2026-02-20 00:58:07  WARNING   [Dryad] File list error for doi:10.5061/dryad.jb10510: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jb10510/files
+2026-02-20 00:58:07  INFO      [Figshare] Searching: 'focus group transcript'
+2026-02-20 00:58:07  WARNING   [Dryad] File list error for doi:10.5061/dryad.7h9f4: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.7h9f4/files
+2026-02-20 00:58:07  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=focus+group+transcript&item_type=3&page=1&page_size=25
+2026-02-20 00:58:07  INFO      [Figshare] 'focus group transcript' → 0 records with open licenses
+2026-02-20 00:58:07  WARNING   [Dryad] File list error for doi:10.5061/dryad.52582: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.52582/files
+2026-02-20 00:58:07  WARNING   [Dryad] File list error for doi:10.5061/dryad.8231nj1: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.8231nj1/files
+2026-02-20 00:58:08  WARNING   [Dryad] File list error for doi:10.5061/dryad.jf361: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jf361/files
+2026-02-20 00:58:08  WARNING   [Dryad] File list error for doi:10.5061/dryad.c5p1f: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.c5p1f/files
+2026-02-20 00:58:08  WARNING   [Dryad] File list error for doi:10.5061/dryad.9v46k: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.9v46k/files
+2026-02-20 00:58:08  INFO      [Figshare] Searching: 'ethnographic fieldnotes'
+2026-02-20 00:58:08  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=ethnographic+fieldnotes&item_type=3&page=1&page_size=25
+2026-02-20 00:58:08  INFO      [Figshare] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 00:58:08  WARNING   [Dryad] File list error for doi:10.5061/dryad.c1j01: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.c1j01/files
+2026-02-20 00:58:08  WARNING   [Dryad] File list error for doi:10.5061/dryad.t5r8m: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.t5r8m/files
+2026-02-20 00:58:09  WARNING   [Dryad] File list error for doi:10.5061/dryad.cm86089: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.cm86089/files
+2026-02-20 00:58:09  INFO      [Figshare] Total unique records: 0
+2026-02-20 00:58:09  INFO      [Figshare] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 00:58:10  WARNING   [Dryad] Search error page 3: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qdpx&per_page=25&page=3
+2026-02-20 00:58:10  INFO      [Dryad] 'qdpx' → 0 records with open licenses
+2026-02-20 00:58:10  INFO      [Zenodo] 'qdc codebook qualitative' → 324 records with open licenses
+2026-02-20 00:58:11  INFO      [Dryad] Searching: 'refi-qda'
+2026-02-20 00:58:11  INFO      [Zenodo] Searching: 'NVivo qualitative'
+2026-02-20 00:58:11  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=refi-qda&per_page=25&page=1
+2026-02-20 00:58:11  INFO      [Dryad] 'refi-qda' → 0 records with open licenses
+2026-02-20 00:58:12  INFO      [Dryad] Searching: 'qdc codebook qualitative'
+2026-02-20 00:58:12  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qdc+codebook+qualitative&per_page=25&page=1
+2026-02-20 00:58:12  INFO      [Dryad] 'qdc codebook qualitative' → 0 records with open licenses
+2026-02-20 00:58:13  INFO      [Dryad] Searching: 'NVivo qualitative'
+2026-02-20 00:58:14  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=NVivo+qualitative&per_page=25&page=1
+2026-02-20 00:58:14  INFO      [Dryad] 'NVivo qualitative' → 0 records with open licenses
+2026-02-20 00:58:15  INFO      [Dryad] Searching: 'ATLAS.ti qualitative'
+2026-02-20 00:58:15  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=ATLAS.ti+qualitative&per_page=25&page=1
+2026-02-20 00:58:15  INFO      [Dryad] 'ATLAS.ti qualitative' → 0 records with open licenses
+2026-02-20 00:58:16  INFO      [Dryad] Searching: 'MAXQDA qualitative'
+2026-02-20 00:58:16  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=MAXQDA+qualitative&per_page=25&page=1
+2026-02-20 00:58:16  INFO      [Dryad] 'MAXQDA qualitative' → 0 records with open licenses
+2026-02-20 00:58:17  INFO      [Dryad] Searching: 'QDA Miner qualitative'
+2026-02-20 00:58:17  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=QDA+Miner+qualitative&per_page=25&page=1
+2026-02-20 00:58:17  INFO      [Dryad] 'QDA Miner qualitative' → 0 records with open licenses
+2026-02-20 00:58:18  INFO      [Dryad] Searching: 'Quirkos qualitative'
+2026-02-20 00:58:18  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Quirkos+qualitative&per_page=25&page=1
+2026-02-20 00:58:18  INFO      [Dryad] 'Quirkos qualitative' → 0 records with open licenses
+2026-02-20 00:58:19  INFO      [Dryad] Searching: 'Dedoose qualitative'
+2026-02-20 00:58:20  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Dedoose+qualitative&per_page=25&page=1
+2026-02-20 00:58:20  INFO      [Dryad] 'Dedoose qualitative' → 0 records with open licenses
+2026-02-20 00:58:21  INFO      [Dryad] Searching: 'Transana qualitative'
+2026-02-20 00:58:21  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Transana+qualitative&per_page=25&page=1
+2026-02-20 00:58:21  INFO      [Dryad] 'Transana qualitative' → 0 records with open licenses
+2026-02-20 00:58:22  INFO      [Dryad] Searching: 'qualitative data analysis'
+2026-02-20 00:58:22  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qualitative+data+analysis&per_page=25&page=1
+2026-02-20 00:58:22  INFO      [Dryad] 'qualitative data analysis' → 0 records with open licenses
+2026-02-20 00:58:23  INFO      [Zenodo] 'NVivo qualitative' → 338 records with open licenses
+2026-02-20 00:58:23  INFO      [Dryad] Searching: 'CAQDAS'
+2026-02-20 00:58:23  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=CAQDAS&per_page=25&page=1
+2026-02-20 00:58:23  INFO      [Dryad] 'CAQDAS' → 0 records with open licenses
+2026-02-20 00:58:24  INFO      [Zenodo] Searching: 'ATLAS.ti qualitative'
+2026-02-20 00:58:24  INFO      [Dryad] Searching: 'interview transcript qualitative'
+2026-02-20 00:58:24  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=interview+transcript+qualitative&per_page=25&page=1
+2026-02-20 00:58:24  INFO      [Dryad] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 00:58:25  INFO      [Dryad] Searching: 'focus group transcript'
+2026-02-20 00:58:26  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=focus+group+transcript&per_page=25&page=1
+2026-02-20 00:58:26  INFO      [Dryad] 'focus group transcript' → 0 records with open licenses
+2026-02-20 00:58:27  INFO      [Dryad] Searching: 'ethnographic fieldnotes'
+2026-02-20 00:58:27  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=ethnographic+fieldnotes&per_page=25&page=1
+2026-02-20 00:58:27  INFO      [Dryad] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 00:58:28  INFO      [Dryad] Total unique records: 0
+2026-02-20 00:58:28  INFO      [Dryad] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 00:58:36  INFO      [Zenodo] 'ATLAS.ti qualitative' → 337 records with open licenses
+2026-02-20 00:58:37  INFO      [Zenodo] Searching: 'MAXQDA qualitative'
+2026-02-20 00:58:49  INFO      [Zenodo] 'MAXQDA qualitative' → 338 records with open licenses
+2026-02-20 00:58:50  INFO      [Zenodo] Searching: 'QDA Miner qualitative'
+2026-02-20 00:59:02  INFO      [Zenodo] 'QDA Miner qualitative' → 336 records with open licenses
+2026-02-20 00:59:03  INFO      [Zenodo] Searching: 'Quirkos qualitative'
+2026-02-20 00:59:12  INFO      [Zenodo] 'Quirkos qualitative' → 338 records with open licenses
+2026-02-20 00:59:13  INFO      [Zenodo] Searching: 'Dedoose qualitative'
+2026-02-20 00:59:25  INFO      [Zenodo] 'Dedoose qualitative' → 338 records with open licenses
+2026-02-20 00:59:26  INFO      [Zenodo] Searching: 'Transana qualitative'
+2026-02-20 00:59:37  INFO      [Zenodo] 'Transana qualitative' → 338 records with open licenses
+2026-02-20 00:59:38  INFO      [Zenodo] Searching: 'qualitative data analysis'
+2026-02-20 00:59:48  INFO      [Zenodo] 'qualitative data analysis' → 203 records with open licenses
+2026-02-20 00:59:49  INFO      [Zenodo] Searching: 'CAQDAS'
+2026-02-20 00:59:51  INFO      [Zenodo] 'CAQDAS' → 2 records with open licenses
+2026-02-20 00:59:52  INFO      [Zenodo] Searching: 'interview transcript qualitative'
+2026-02-20 01:00:05  INFO      [Zenodo] 'interview transcript qualitative' → 280 records with open licenses
+2026-02-20 01:00:06  INFO      [Zenodo] Searching: 'focus group transcript'
+2026-02-20 01:00:19  INFO      [Zenodo] 'focus group transcript' → 107 records with open licenses
+2026-02-20 01:00:20  INFO      [Zenodo] Searching: 'ethnographic fieldnotes'
+2026-02-20 01:00:31  INFO      [Zenodo] 'ethnographic fieldnotes' → 98 records with open licenses
+2026-02-20 01:00:32  INFO      [Zenodo] Total unique records: 911
+2026-02-20 01:00:35  INFO      [Zenodo] Done — 436 new records inserted (found 911 open-licensed)
+2026-02-20 01:00:35  INFO      CSV exported → C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260220_000035.csv
+2026-02-20 01:00:35  INFO      Pipeline complete — total=915  downloaded=0  sources=1  licenses=7
+2026-02-20 01:01:49  INFO      === Download phase (scope=qda-only, budget=50 MB) ===
+    To download : 7 files
+    Media skipped (URL saved): 9
+2026-02-20 01:01:50  WARNING   Budget reached — stopping. Adding EFL_ILP_ScopingReview_CodedData_20250718.qdpx would exceed the 2048 MB budget.
+2026-02-20 01:01:50  INFO      Download done — 0.0 MB used of 50 MB budget
+2026-02-20 01:01:50  INFO      CSV exported → C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260220_000150.csv
+2026-02-20 01:01:50  INFO      Pipeline complete — total=915  downloaded=0  sources=1  licenses=7
+2026-02-20 01:06:21  INFO      === Download phase (scope=qda-only, budget=50 MB) ===
+    To download : 7 files
+    Media skipped (URL saved): 9
+2026-02-20 01:06:22  WARNING   Skipping EFL_ILP_ScopingReview_CodedData_20250718.qdpx — 67.5 MB would exceed remaining budget of 50.0 MB
+2026-02-20 01:06:28  INFO      Downloaded: Polish debates on higher education party manifestos.qdpx  (used 29.5 / 50 MB)
+2026-02-20 01:06:29  WARNING   Skipping Polish debates on higher education party manifestos.mx20 — 36.2 MB would exceed remaining budget of 20.5 MB
+2026-02-20 01:06:30  WARNING   Skipping Polish debates on higher education party manifestos.mx22 — 42.3 MB would exceed remaining budget of 20.5 MB
+2026-02-20 01:06:33  INFO      Downloaded: Qual Coder Coding File .qdpx  (used 40.1 / 50 MB)
+2026-02-20 01:06:34  WARNING   Skipping 1_PLANET4B_QDPXProject-BusinessModels_Pisa_20250919_Qualitative-Analysis-Project.qdpx — 142.2 MB exceeds per-file limit of 100 MB
+2026-02-20 01:06:35  WARNING   Skipping 23_PLANET4B_QDPXProject-FrameAnalysis_Pisa_20250514_Qualitative-Analysis-Project.qdpx — 92.5 MB would exceed remaining budget of 9.9 MB
+2026-02-20 01:06:36  INFO      Download done — 40.1 MB used of 50 MB budget
+2026-02-20 01:06:37  INFO      CSV exported → C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260220_000636.csv
+2026-02-20 01:06:37  INFO      Pipeline complete — total=915  downloaded=2  sources=1  licenses=7
+2026-02-20 17:00:16  INFO      Scraping 8 source(s) with up to 4 workers in parallel…
+2026-02-20 17:00:16  INFO      === [Zenodo] Starting scrape ===
+2026-02-20 17:00:16  INFO      === [Dryad] Starting scrape ===
+2026-02-20 17:00:16  INFO      [Zenodo] Searching: 'qdpx'
+2026-02-20 17:00:16  INFO      [Dryad] Searching: 'qdpx'
+2026-02-20 17:00:16  INFO      === [Harvard Dataverse] Starting scrape ===
+2026-02-20 17:00:16  INFO      === [DataverseNO] Starting scrape ===
+2026-02-20 17:00:16  INFO      [Harvard Dataverse] Searching: 'qdpx'
+2026-02-20 17:00:16  INFO      [DataverseNO] Searching: 'qdpx'
+2026-02-20 17:00:19  INFO      [DataverseNO] 'qdpx' → 1 records with open licenses
+2026-02-20 17:00:19  INFO      [Zenodo] 'qdpx' → 90 records with open licenses
+2026-02-20 17:00:20  INFO      [DataverseNO] Searching: 'refi-qda'
+2026-02-20 17:00:20  INFO      [Zenodo] Searching: 'refi-qda'
+2026-02-20 17:00:20  WARNING   [Dryad] File list error for doi:10.5061/dryad.7rh4625: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.7rh4625/files
+2026-02-20 17:00:21  WARNING   [Dryad] File list error for doi:10.5061/dryad.r8d4q: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.r8d4q/files
+2026-02-20 17:00:21  WARNING   [Dryad] File list error for doi:10.5061/dryad.2d7b8: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2d7b8/files
+2026-02-20 17:00:21  WARNING   [Dryad] File list error for doi:10.5061/dryad.s3j9074: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.s3j9074/files
+2026-02-20 17:00:21  INFO      [Harvard Dataverse] 'qdpx' → 1 records with open licenses
+2026-02-20 17:00:21  WARNING   [Dryad] File list error for doi:10.5061/dryad.08vv50n: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.08vv50n/files
+2026-02-20 17:00:21  INFO      [DataverseNO] 'refi-qda' → 2 records with open licenses
+2026-02-20 17:00:22  WARNING   [Dryad] File list error for doi:10.5061/dryad.n2q7f: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.n2q7f/files
+2026-02-20 17:00:22  INFO      [Zenodo] 'refi-qda' → 11 records with open licenses
+2026-02-20 17:00:22  WARNING   [Dryad] File list error for doi:10.5061/dryad.4vg17: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.4vg17/files
+2026-02-20 17:00:22  WARNING   [Dryad] File list error for doi:10.5061/dryad.77b2422: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.77b2422/files
+2026-02-20 17:00:22  INFO      [Harvard Dataverse] Searching: 'refi-qda'
+2026-02-20 17:00:22  WARNING   [Dryad] File list error for doi:10.5061/dryad.9cp3j: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.9cp3j/files
+2026-02-20 17:00:22  WARNING   [Dryad] File list error for doi:10.5061/dryad.r5nf0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.r5nf0/files
+2026-02-20 17:00:23  INFO      [DataverseNO] Searching: 'qdc codebook qualitative'
+2026-02-20 17:00:23  WARNING   [Dryad] File list error for doi:10.5061/dryad.30mv0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.30mv0/files
+2026-02-20 17:00:23  INFO      [Zenodo] Searching: 'qdc codebook qualitative'
+2026-02-20 17:00:23  WARNING   [Dryad] File list error for doi:10.5061/dryad.hf93m: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.hf93m/files
+2026-02-20 17:00:23  WARNING   [Dryad] File list error for doi:10.5061/dryad.gc72v: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.gc72v/files
+2026-02-20 17:00:23  WARNING   [Dryad] File list error for doi:10.5061/dryad.2j27b: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2j27b/files
+2026-02-20 17:00:24  WARNING   [Dryad] File list error for doi:10.5061/dryad.3cb81: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.3cb81/files
+2026-02-20 17:00:24  WARNING   [Dryad] File list error for doi:10.5061/dryad.5bk4c: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.5bk4c/files
+2026-02-20 17:00:24  WARNING   [Dryad] File list error for doi:10.5061/dryad.p61vk: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p61vk/files
+2026-02-20 17:00:24  WARNING   [Dryad] File list error for doi:10.5061/dryad.2hr38: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2hr38/files
+2026-02-20 17:00:24  WARNING   [Dryad] File list error for doi:10.5061/dryad.p8br3r4: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p8br3r4/files
+2026-02-20 17:00:25  WARNING   [Dryad] File list error for doi:10.5061/dryad.3528sj6: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.3528sj6/files
+2026-02-20 17:00:25  WARNING   [Dryad] File list error for doi:10.5061/dryad.4754j: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.4754j/files
+2026-02-20 17:00:25  WARNING   [Dryad] File list error for doi:10.5061/dryad.d3j00: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.d3j00/files
+2026-02-20 17:00:25  WARNING   [Dryad] File list error for doi:10.5061/dryad.m57sd: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.m57sd/files
+2026-02-20 17:00:25  WARNING   [Dryad] File list error for doi:10.5061/dryad.p7c77: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.p7c77/files
+2026-02-20 17:00:26  INFO      [DataverseNO] 'qdc codebook qualitative' → 7 records with open licenses
+2026-02-20 17:00:26  WARNING   [Dryad] File list error for doi:10.5061/dryad.8jb83: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.8jb83/files
+2026-02-20 17:00:27  INFO      [DataverseNO] Searching: 'NVivo qualitative'
+2026-02-20 17:00:29  WARNING   [Dryad] File list error for doi:10.5061/dryad.hq68q: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.hq68q/files
+2026-02-20 17:00:29  WARNING   [Dryad] File list error for doi:10.5061/dryad.mh67v: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.mh67v/files
+2026-02-20 17:00:29  WARNING   [Dryad] File list error for doi:10.5061/dryad.43bv0: 404 Client Error: Not Found for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.43bv0/files
+2026-02-20 17:00:29  INFO      [DataverseNO] 'NVivo qualitative' → 5 records with open licenses
+2026-02-20 17:00:29  WARNING   [Dryad] File list error for doi:10.5061/dryad.jq285: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jq285/files
+2026-02-20 17:00:29  WARNING   [Dryad] File list error for doi:10.5061/dryad.2gp4g: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.2gp4g/files
+2026-02-20 17:00:30  WARNING   [Dryad] File list error for doi:10.5061/dryad.n726pq6: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.n726pq6/files
+2026-02-20 17:00:30  WARNING   [Dryad] File list error for doi:10.5061/dryad.fd612: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.fd612/files
+2026-02-20 17:00:30  WARNING   [Dryad] File list error for doi:10.5061/dryad.qp0qv: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.qp0qv/files
+2026-02-20 17:00:30  INFO      [DataverseNO] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:00:30  WARNING   [Dryad] File list error for doi:10.5061/dryad.rh07b: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.rh07b/files
+2026-02-20 17:00:30  WARNING   [Dryad] File list error for doi:10.5061/dryad.q530s: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.q530s/files
+2026-02-20 17:00:31  WARNING   [Dryad] File list error for doi:10.5061/dryad.216tp: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.216tp/files
+2026-02-20 17:00:31  WARNING   [Dryad] File list error for doi:10.5061/dryad.45pv2: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.45pv2/files
+2026-02-20 17:00:31  WARNING   [Dryad] File list error for doi:10.5061/dryad.s9v06: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.s9v06/files
+2026-02-20 17:00:31  WARNING   [Dryad] File list error for doi:10.5061/dryad.1nt24m0: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.1nt24m0/files
+2026-02-20 17:00:32  WARNING   [Dryad] File list error for doi:10.5061/dryad.dd00m: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.dd00m/files
+2026-02-20 17:00:32  WARNING   [Dryad] File list error for doi:10.5061/dryad.jb10510: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jb10510/files
+2026-02-20 17:00:32  WARNING   [Dryad] File list error for doi:10.5061/dryad.7h9f4: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.7h9f4/files
+2026-02-20 17:00:32  INFO      [Harvard Dataverse] 'refi-qda' → 4 records with open licenses
+2026-02-20 17:00:32  WARNING   [Dryad] File list error for doi:10.5061/dryad.52582: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.52582/files
+2026-02-20 17:00:32  WARNING   [Dryad] File list error for doi:10.5061/dryad.8231nj1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.8231nj1/files
+2026-02-20 17:00:33  INFO      [DataverseNO] 'ATLAS.ti qualitative' → 5 records with open licenses
+2026-02-20 17:00:33  WARNING   [Dryad] File list error for doi:10.5061/dryad.jf361: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.jf361/files
+2026-02-20 17:00:33  WARNING   [Dryad] File list error for doi:10.5061/dryad.c5p1f: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.c5p1f/files
+2026-02-20 17:00:33  INFO      [Harvard Dataverse] Searching: 'qdc codebook qualitative'
+2026-02-20 17:00:33  WARNING   [Dryad] File list error for doi:10.5061/dryad.9v46k: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.9v46k/files
+2026-02-20 17:00:33  WARNING   [Dryad] File list error for doi:10.5061/dryad.c1j01: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.c1j01/files
+2026-02-20 17:00:34  WARNING   [Dryad] File list error for doi:10.5061/dryad.t5r8m: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.t5r8m/files
+2026-02-20 17:00:34  INFO      [DataverseNO] Searching: 'MAXQDA qualitative'
+2026-02-20 17:00:34  WARNING   [Dryad] File list error for doi:10.5061/dryad.cm86089: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets/doi:10.5061%2Fdryad.cm86089/files
+2026-02-20 17:00:35  WARNING   [Dryad] Search error page 3: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qdpx&per_page=25&page=3
+2026-02-20 17:00:35  INFO      [Dryad] 'qdpx' → 0 records with open licenses
+2026-02-20 17:00:35  INFO      [Zenodo] 'qdc codebook qualitative' → 331 records with open licenses
+2026-02-20 17:00:36  INFO      [Dryad] Searching: 'refi-qda'
+2026-02-20 17:00:36  INFO      [Zenodo] Searching: 'NVivo qualitative'
+2026-02-20 17:00:36  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=refi-qda&per_page=25&page=1
+2026-02-20 17:00:36  INFO      [Dryad] 'refi-qda' → 0 records with open licenses
+2026-02-20 17:00:36  INFO      [DataverseNO] 'MAXQDA qualitative' → 7 records with open licenses
+2026-02-20 17:00:37  INFO      [Dryad] Searching: 'qdc codebook qualitative'
+2026-02-20 17:00:37  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qdc+codebook+qualitative&per_page=25&page=1
+2026-02-20 17:00:37  INFO      [Dryad] 'qdc codebook qualitative' → 0 records with open licenses
+2026-02-20 17:00:37  INFO      [DataverseNO] Searching: 'QDA Miner qualitative'
+2026-02-20 17:00:38  INFO      [Dryad] Searching: 'NVivo qualitative'
+2026-02-20 17:00:39  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=NVivo+qualitative&per_page=25&page=1
+2026-02-20 17:00:39  INFO      [Dryad] 'NVivo qualitative' → 0 records with open licenses
+2026-02-20 17:00:40  INFO      [Dryad] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:00:40  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=ATLAS.ti+qualitative&per_page=25&page=1
+2026-02-20 17:00:40  INFO      [Dryad] 'ATLAS.ti qualitative' → 0 records with open licenses
+2026-02-20 17:00:41  INFO      [Dryad] Searching: 'MAXQDA qualitative'
+2026-02-20 17:00:41  INFO      [DataverseNO] 'QDA Miner qualitative' → 9 records with open licenses
+2026-02-20 17:00:41  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=MAXQDA+qualitative&per_page=25&page=1
+2026-02-20 17:00:41  INFO      [Dryad] 'MAXQDA qualitative' → 0 records with open licenses
+2026-02-20 17:00:42  INFO      [DataverseNO] Searching: 'Quirkos qualitative'
+2026-02-20 17:00:42  INFO      [Dryad] Searching: 'QDA Miner qualitative'
+2026-02-20 17:00:42  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=QDA+Miner+qualitative&per_page=25&page=1
+2026-02-20 17:00:42  INFO      [Dryad] 'QDA Miner qualitative' → 0 records with open licenses
+2026-02-20 17:00:43  INFO      [Dryad] Searching: 'Quirkos qualitative'
+2026-02-20 17:00:44  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Quirkos+qualitative&per_page=25&page=1
+2026-02-20 17:00:44  INFO      [Dryad] 'Quirkos qualitative' → 0 records with open licenses
+2026-02-20 17:00:44  INFO      [DataverseNO] 'Quirkos qualitative' → 5 records with open licenses
+2026-02-20 17:00:45  INFO      [Dryad] Searching: 'Dedoose qualitative'
+2026-02-20 17:00:45  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Dedoose+qualitative&per_page=25&page=1
+2026-02-20 17:00:45  INFO      [Dryad] 'Dedoose qualitative' → 0 records with open licenses
+2026-02-20 17:00:45  INFO      [DataverseNO] Searching: 'Dedoose qualitative'
+2026-02-20 17:00:46  INFO      [Dryad] Searching: 'Transana qualitative'
+2026-02-20 17:00:46  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=Transana+qualitative&per_page=25&page=1
+2026-02-20 17:00:46  INFO      [Dryad] 'Transana qualitative' → 0 records with open licenses
+2026-02-20 17:00:47  INFO      [Dryad] Searching: 'qualitative data analysis'
+2026-02-20 17:00:47  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=qualitative+data+analysis&per_page=25&page=1
+2026-02-20 17:00:47  INFO      [Dryad] 'qualitative data analysis' → 0 records with open licenses
+2026-02-20 17:00:48  INFO      [Zenodo] 'NVivo qualitative' → 344 records with open licenses
+2026-02-20 17:00:48  INFO      [DataverseNO] 'Dedoose qualitative' → 5 records with open licenses
+2026-02-20 17:00:48  INFO      [Dryad] Searching: 'CAQDAS'
+2026-02-20 17:00:48  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=CAQDAS&per_page=25&page=1
+2026-02-20 17:00:48  INFO      [Dryad] 'CAQDAS' → 0 records with open licenses
+2026-02-20 17:00:49  INFO      [Zenodo] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:00:49  INFO      [DataverseNO] Searching: 'Transana qualitative'
+2026-02-20 17:00:49  INFO      [Dryad] Searching: 'interview transcript qualitative'
+2026-02-20 17:00:50  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=interview+transcript+qualitative&per_page=25&page=1
+2026-02-20 17:00:50  INFO      [Dryad] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 17:00:51  INFO      [Dryad] Searching: 'focus group transcript'
+2026-02-20 17:00:51  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=focus+group+transcript&per_page=25&page=1
+2026-02-20 17:00:51  INFO      [Dryad] 'focus group transcript' → 0 records with open licenses
+2026-02-20 17:00:51  INFO      [DataverseNO] 'Transana qualitative' → 5 records with open licenses
+2026-02-20 17:00:52  INFO      [Dryad] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:00:52  WARNING   [Dryad] Search error page 1: 429 Client Error: Too Many Requests for url: https://datadryad.org/api/v2/datasets?q=ethnographic+fieldnotes&per_page=25&page=1
+2026-02-20 17:00:52  INFO      [Dryad] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 17:00:52  INFO      [DataverseNO] Searching: 'qualitative data analysis'
+2026-02-20 17:00:53  INFO      [Dryad] Total unique records: 0
+2026-02-20 17:00:53  INFO      === [QDR Syracuse] Starting scrape ===
+2026-02-20 17:00:53  INFO      [Dryad] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 17:00:53  INFO      [QDR Syracuse] Searching: 'qdpx'
+2026-02-20 17:00:58  INFO      [QDR Syracuse] 'qdpx' → 0 records with open licenses
+2026-02-20 17:00:59  INFO      [QDR Syracuse] Searching: 'refi-qda'
+2026-02-20 17:01:05  INFO      [Zenodo] 'ATLAS.ti qualitative' → 343 records with open licenses
+2026-02-20 17:01:06  INFO      [Zenodo] Searching: 'MAXQDA qualitative'
+2026-02-20 17:01:11  INFO      [QDR Syracuse] 'refi-qda' → 0 records with open licenses
+2026-02-20 17:01:12  INFO      [QDR Syracuse] Searching: 'qdc codebook qualitative'
+2026-02-20 17:01:14  INFO      [DataverseNO] 'qualitative data analysis' → 93 records with open licenses
+2026-02-20 17:01:15  INFO      [DataverseNO] Searching: 'CAQDAS'
+2026-02-20 17:01:15  INFO      [DataverseNO] 'CAQDAS' → 0 records with open licenses
+2026-02-20 17:01:16  INFO      [DataverseNO] Searching: 'interview transcript qualitative'
+2026-02-20 17:01:17  INFO      [Harvard Dataverse] 'qdc codebook qualitative' → 63 records with open licenses
+2026-02-20 17:01:18  INFO      [Harvard Dataverse] Searching: 'NVivo qualitative'
+2026-02-20 17:01:18  INFO      [Zenodo] 'MAXQDA qualitative' → 344 records with open licenses
+2026-02-20 17:01:19  INFO      [Zenodo] Searching: 'QDA Miner qualitative'
+2026-02-20 17:01:33  INFO      [Zenodo] 'QDA Miner qualitative' → 342 records with open licenses
+2026-02-20 17:01:33  INFO      [DataverseNO] 'interview transcript qualitative' → 69 records with open licenses
+2026-02-20 17:01:34  INFO      [Zenodo] Searching: 'Quirkos qualitative'
+2026-02-20 17:01:34  INFO      [DataverseNO] Searching: 'focus group transcript'
+2026-02-20 17:01:45  INFO      [Zenodo] 'Quirkos qualitative' → 344 records with open licenses
+2026-02-20 17:01:46  INFO      [Zenodo] Searching: 'Dedoose qualitative'
+2026-02-20 17:01:51  INFO      [DataverseNO] 'focus group transcript' → 63 records with open licenses
+2026-02-20 17:01:52  INFO      [DataverseNO] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:01:53  INFO      [DataverseNO] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 17:01:54  INFO      [DataverseNO] Total unique records: 176
+2026-02-20 17:01:54  INFO      === [OSF] Starting scrape ===
+2026-02-20 17:01:54  INFO      [OSF] Searching: 'qdpx'
+2026-02-20 17:01:54  INFO      [DataverseNO] Done — 176 new records inserted (found 176 open-licensed)
+2026-02-20 17:01:55  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=qdpx&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:01:55  INFO      [OSF] 'qdpx' → 0 records with open licenses
+2026-02-20 17:01:56  INFO      [OSF] Searching: 'refi-qda'
+2026-02-20 17:01:56  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=refi-qda&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:01:56  INFO      [OSF] 'refi-qda' → 0 records with open licenses
+2026-02-20 17:01:57  INFO      [OSF] Searching: 'qdc codebook qualitative'
+2026-02-20 17:01:57  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=qdc+codebook+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:01:57  INFO      [OSF] 'qdc codebook qualitative' → 0 records with open licenses
+2026-02-20 17:01:58  INFO      [OSF] Searching: 'NVivo qualitative'
+2026-02-20 17:01:58  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=NVivo+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:01:58  INFO      [OSF] 'NVivo qualitative' → 0 records with open licenses
+2026-02-20 17:01:59  INFO      [OSF] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:01:59  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=ATLAS.ti+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:01:59  INFO      [OSF] 'ATLAS.ti qualitative' → 0 records with open licenses
+2026-02-20 17:01:59  INFO      [Zenodo] 'Dedoose qualitative' → 344 records with open licenses
+2026-02-20 17:02:00  INFO      [OSF] Searching: 'MAXQDA qualitative'
+2026-02-20 17:02:00  INFO      [Zenodo] Searching: 'Transana qualitative'
+2026-02-20 17:02:00  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=MAXQDA+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:00  INFO      [OSF] 'MAXQDA qualitative' → 0 records with open licenses
+2026-02-20 17:02:01  INFO      [OSF] Searching: 'QDA Miner qualitative'
+2026-02-20 17:02:02  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=QDA+Miner+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:02  INFO      [OSF] 'QDA Miner qualitative' → 0 records with open licenses
+2026-02-20 17:02:03  INFO      [OSF] Searching: 'Quirkos qualitative'
+2026-02-20 17:02:03  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=Quirkos+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:03  INFO      [OSF] 'Quirkos qualitative' → 0 records with open licenses
+2026-02-20 17:02:04  INFO      [OSF] Searching: 'Dedoose qualitative'
+2026-02-20 17:02:04  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=Dedoose+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:04  INFO      [OSF] 'Dedoose qualitative' → 0 records with open licenses
+2026-02-20 17:02:05  INFO      [OSF] Searching: 'Transana qualitative'
+2026-02-20 17:02:05  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=Transana+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:05  INFO      [OSF] 'Transana qualitative' → 0 records with open licenses
+2026-02-20 17:02:06  INFO      [OSF] Searching: 'qualitative data analysis'
+2026-02-20 17:02:06  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=qualitative+data+analysis&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:06  INFO      [OSF] 'qualitative data analysis' → 0 records with open licenses
+2026-02-20 17:02:07  INFO      [OSF] Searching: 'CAQDAS'
+2026-02-20 17:02:07  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=CAQDAS&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:07  INFO      [OSF] 'CAQDAS' → 0 records with open licenses
+2026-02-20 17:02:08  INFO      [OSF] Searching: 'interview transcript qualitative'
+2026-02-20 17:02:09  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=interview+transcript+qualitative&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:09  INFO      [OSF] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 17:02:10  INFO      [OSF] Searching: 'focus group transcript'
+2026-02-20 17:02:10  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=focus+group+transcript&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:10  INFO      [OSF] 'focus group transcript' → 0 records with open licenses
+2026-02-20 17:02:11  INFO      [OSF] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:02:11  WARNING   [OSF] API error: 400 Client Error: Bad Request for url: https://api.osf.io/v2/nodes/?filter%5Bsearch%5D=ethnographic+fieldnotes&filter%5Bpublic%5D=true&page%5Bsize%5D=25
+2026-02-20 17:02:11  INFO      [OSF] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 17:02:12  INFO      [OSF] Total unique records: 0
+2026-02-20 17:02:12  INFO      === [Figshare] Starting scrape ===
+2026-02-20 17:02:12  INFO      [OSF] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 17:02:12  INFO      [Figshare] Searching: 'qdpx'
+2026-02-20 17:02:13  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qdpx&item_type=3&page=1&page_size=25
+2026-02-20 17:02:13  INFO      [Figshare] 'qdpx' → 0 records with open licenses
+2026-02-20 17:02:14  INFO      [Zenodo] 'Transana qualitative' → 344 records with open licenses
+2026-02-20 17:02:14  INFO      [Figshare] Searching: 'refi-qda'
+2026-02-20 17:02:14  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=refi-qda&item_type=3&page=1&page_size=25
+2026-02-20 17:02:14  INFO      [Figshare] 'refi-qda' → 0 records with open licenses
+2026-02-20 17:02:15  INFO      [Zenodo] Searching: 'qualitative data analysis'
+2026-02-20 17:02:15  INFO      [Figshare] Searching: 'qdc codebook qualitative'
+2026-02-20 17:02:15  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qdc+codebook+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:15  INFO      [Figshare] 'qdc codebook qualitative' → 0 records with open licenses
+2026-02-20 17:02:16  INFO      [Figshare] Searching: 'NVivo qualitative'
+2026-02-20 17:02:16  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=NVivo+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:16  INFO      [Figshare] 'NVivo qualitative' → 0 records with open licenses
+2026-02-20 17:02:17  INFO      [Figshare] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:02:17  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=ATLAS.ti+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:17  INFO      [Figshare] 'ATLAS.ti qualitative' → 0 records with open licenses
+2026-02-20 17:02:18  INFO      [Figshare] Searching: 'MAXQDA qualitative'
+2026-02-20 17:02:18  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=MAXQDA+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:18  INFO      [Figshare] 'MAXQDA qualitative' → 0 records with open licenses
+2026-02-20 17:02:19  INFO      [Figshare] Searching: 'QDA Miner qualitative'
+2026-02-20 17:02:19  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=QDA+Miner+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:19  INFO      [Figshare] 'QDA Miner qualitative' → 0 records with open licenses
+2026-02-20 17:02:20  INFO      [Figshare] Searching: 'Quirkos qualitative'
+2026-02-20 17:02:20  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Quirkos+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:20  INFO      [Figshare] 'Quirkos qualitative' → 0 records with open licenses
+2026-02-20 17:02:21  INFO      [Figshare] Searching: 'Dedoose qualitative'
+2026-02-20 17:02:21  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Dedoose+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:21  INFO      [Figshare] 'Dedoose qualitative' → 0 records with open licenses
+2026-02-20 17:02:22  INFO      [Figshare] Searching: 'Transana qualitative'
+2026-02-20 17:02:22  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=Transana+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:22  INFO      [Figshare] 'Transana qualitative' → 0 records with open licenses
+2026-02-20 17:02:23  INFO      [Figshare] Searching: 'qualitative data analysis'
+2026-02-20 17:02:23  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=qualitative+data+analysis&item_type=3&page=1&page_size=25
+2026-02-20 17:02:23  INFO      [Figshare] 'qualitative data analysis' → 0 records with open licenses
+2026-02-20 17:02:24  INFO      [Figshare] Searching: 'CAQDAS'
+2026-02-20 17:02:24  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=CAQDAS&item_type=3&page=1&page_size=25
+2026-02-20 17:02:24  INFO      [Figshare] 'CAQDAS' → 0 records with open licenses
+2026-02-20 17:02:25  INFO      [Figshare] Searching: 'interview transcript qualitative'
+2026-02-20 17:02:25  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=interview+transcript+qualitative&item_type=3&page=1&page_size=25
+2026-02-20 17:02:25  INFO      [Figshare] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 17:02:26  INFO      [Figshare] Searching: 'focus group transcript'
+2026-02-20 17:02:27  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=focus+group+transcript&item_type=3&page=1&page_size=25
+2026-02-20 17:02:27  INFO      [Figshare] 'focus group transcript' → 0 records with open licenses
+2026-02-20 17:02:28  INFO      [Figshare] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:02:28  WARNING   [Figshare] Search error page 1: 404 Client Error: Not Found for url: https://api.figshare.com/v2/articles/search?search_for=ethnographic+fieldnotes&item_type=3&page=1&page_size=25
+2026-02-20 17:02:28  INFO      [Figshare] 'ethnographic fieldnotes' → 0 records with open licenses
+2026-02-20 17:02:29  INFO      [Figshare] Total unique records: 0
+2026-02-20 17:02:29  INFO      === [DANS EASY] Starting scrape ===
+2026-02-20 17:02:29  INFO      [Figshare] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 17:02:29  INFO      [DANS] Starting OAI-PMH harvest (this may take a while)…
+2026-02-20 17:02:29  WARNING   [DANS] OAI-PMH error: mismatched tag: line 10, column 6
+2026-02-20 17:02:29  INFO      [DANS] Harvested 0 matching records
+2026-02-20 17:02:29  INFO      [DANS EASY] Done — 0 new records inserted (found 0 open-licensed)
+2026-02-20 17:02:30  INFO      [Zenodo] 'qualitative data analysis' → 155 records with open licenses
+2026-02-20 17:02:31  INFO      [Zenodo] Searching: 'CAQDAS'
+2026-02-20 17:02:33  INFO      [Zenodo] 'CAQDAS' → 2 records with open licenses
+2026-02-20 17:02:34  INFO      [Zenodo] Searching: 'interview transcript qualitative'
+2026-02-20 17:02:44  INFO      [Zenodo] 'interview transcript qualitative' → 287 records with open licenses
+2026-02-20 17:02:45  INFO      [Zenodo] Searching: 'focus group transcript'
+2026-02-20 17:02:57  INFO      [Zenodo] 'focus group transcript' → 106 records with open licenses
+2026-02-20 17:02:58  INFO      [Zenodo] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:03:08  INFO      [Zenodo] 'ethnographic fieldnotes' → 98 records with open licenses
+2026-02-20 17:03:09  INFO      [Zenodo] Total unique records: 877
+2026-02-20 17:03:12  INFO      [Zenodo] Done — 877 new records inserted (found 877 open-licensed)
+2026-02-20 17:03:18  INFO      [Harvard Dataverse] 'NVivo qualitative' → 8 records with open licenses
+2026-02-20 17:03:19  INFO      [Harvard Dataverse] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:05:18  INFO      [Harvard Dataverse] 'ATLAS.ti qualitative' → 7 records with open licenses
+2026-02-20 17:05:19  INFO      [Harvard Dataverse] Searching: 'MAXQDA qualitative'
+2026-02-20 17:07:18  INFO      [Harvard Dataverse] 'MAXQDA qualitative' → 7 records with open licenses
+2026-02-20 17:07:19  INFO      [Harvard Dataverse] Searching: 'QDA Miner qualitative'
+2026-02-20 17:11:16  INFO      [Harvard Dataverse] 'QDA Miner qualitative' → 13 records with open licenses
+2026-02-20 17:11:17  INFO      [Harvard Dataverse] Searching: 'Quirkos qualitative'
+2026-02-20 17:13:18  INFO      [Harvard Dataverse] 'Quirkos qualitative' → 7 records with open licenses
+2026-02-20 17:13:19  INFO      [Harvard Dataverse] Searching: 'Dedoose qualitative'
+2026-02-20 17:15:20  INFO      [Harvard Dataverse] 'Dedoose qualitative' → 7 records with open licenses
+2026-02-20 17:15:21  INFO      [Harvard Dataverse] Searching: 'Transana qualitative'
+2026-02-20 17:17:20  INFO      [Harvard Dataverse] 'Transana qualitative' → 7 records with open licenses
+2026-02-20 17:17:21  INFO      [Harvard Dataverse] Searching: 'qualitative data analysis'
+2026-02-20 17:17:30  INFO      [Harvard Dataverse] 'qualitative data analysis' → 2 records with open licenses
+2026-02-20 17:17:31  INFO      [Harvard Dataverse] Searching: 'CAQDAS'
+2026-02-20 17:17:31  INFO      [Harvard Dataverse] 'CAQDAS' → 0 records with open licenses
+2026-02-20 17:17:32  INFO      [Harvard Dataverse] Searching: 'interview transcript qualitative'
+2026-02-20 17:17:50  INFO      [Harvard Dataverse] 'interview transcript qualitative' → 27 records with open licenses
+2026-02-20 17:17:51  INFO      [Harvard Dataverse] Searching: 'focus group transcript'
+2026-02-20 17:18:02  INFO      [Harvard Dataverse] 'focus group transcript' → 7 records with open licenses
+2026-02-20 17:18:03  INFO      [Harvard Dataverse] Searching: 'ethnographic fieldnotes'
+2026-02-20 17:18:12  INFO      [QDR Syracuse] 'qdc codebook qualitative' → 47 records with open licenses
+2026-02-20 17:18:13  INFO      [QDR Syracuse] Searching: 'NVivo qualitative'
+2026-02-20 17:18:15  INFO      [Harvard Dataverse] 'ethnographic fieldnotes' → 18 records with open licenses
+2026-02-20 17:18:16  INFO      [Harvard Dataverse] Total unique records: 132
+2026-02-20 17:18:16  INFO      [Harvard Dataverse] Done — 132 new records inserted (found 132 open-licensed)
+2026-02-20 17:34:36  INFO      [QDR Syracuse] 'NVivo qualitative' → 45 records with open licenses
+2026-02-20 17:34:37  INFO      [QDR Syracuse] Searching: 'ATLAS.ti qualitative'
+2026-02-20 17:51:13  INFO      [QDR Syracuse] 'ATLAS.ti qualitative' → 45 records with open licenses
+2026-02-20 17:51:14  INFO      [QDR Syracuse] Searching: 'MAXQDA qualitative'
+2026-02-20 18:20:15  INFO      [QDR Syracuse] 'MAXQDA qualitative' → 44 records with open licenses
+2026-02-20 18:20:16  INFO      [QDR Syracuse] Searching: 'QDA Miner qualitative'
+2026-02-20 19:03:54  INFO      [QDR Syracuse] 'QDA Miner qualitative' → 68 records with open licenses
+2026-02-20 19:03:55  INFO      [QDR Syracuse] Searching: 'Quirkos qualitative'
+2026-02-20 19:38:44  INFO      [QDR Syracuse] 'Quirkos qualitative' → 44 records with open licenses
+2026-02-20 19:38:45  INFO      [QDR Syracuse] Searching: 'Dedoose qualitative'
+2026-02-20 19:54:53  INFO      [QDR Syracuse] 'Dedoose qualitative' → 45 records with open licenses
+2026-02-20 19:54:54  INFO      [QDR Syracuse] Searching: 'Transana qualitative'
+2026-02-20 20:11:06  INFO      [QDR Syracuse] 'Transana qualitative' → 45 records with open licenses
+2026-02-20 20:11:07  INFO      [QDR Syracuse] Searching: 'qualitative data analysis'
+2026-02-20 20:12:33  INFO      [QDR Syracuse] 'qualitative data analysis' → 14 records with open licenses
+2026-02-20 20:12:34  INFO      [QDR Syracuse] Searching: 'CAQDAS'
+2026-02-20 20:12:35  INFO      [QDR Syracuse] 'CAQDAS' → 0 records with open licenses
+2026-02-20 20:12:36  INFO      [QDR Syracuse] Searching: 'interview transcript qualitative'
+2026-02-20 20:14:02  INFO      [QDR Syracuse] 'interview transcript qualitative' → 0 records with open licenses
+2026-02-20 20:14:03  INFO      [QDR Syracuse] Searching: 'focus group transcript'
+2026-02-20 20:14:59  INFO      [QDR Syracuse] 'focus group transcript' → 0 records with open licenses
+2026-02-20 20:15:00  INFO      [QDR Syracuse] Searching: 'ethnographic fieldnotes'
+2026-02-20 20:16:07  INFO      [QDR Syracuse] 'ethnographic fieldnotes' → 2 records with open licenses
+2026-02-20 20:16:08  INFO      [QDR Syracuse] Total unique records: 100
+2026-03-08 01:11:30  INFO      Scraping 2 source(s) with up to 2 workers in parallel…
+2026-03-08 01:11:30  INFO      === [DataFirst] Starting scrape ===
+2026-03-08 01:11:30  INFO      === [CIS] Starting scrape ===
+2026-03-08 01:11:40  INFO      [DataFirst] Page 1 → 123 new IDs (total: 123)
+2026-03-08 01:11:44  INFO      [DataFirst] Page 2 → 111 new IDs (total: 234)
+2026-03-08 01:11:46  INFO      [DataFirst] Page 3 → 101 new IDs (total: 335)
+2026-03-08 01:11:48  INFO      [CIS] Found 0 study numbers from catalogue HTML
+2026-03-08 01:11:48  INFO      [CIS] Probing 1601 study numbers (2000–3600)…
+2026-03-08 01:11:49  INFO      [DataFirst] Page 4 → 102 new IDs (total: 437)
+2026-03-08 01:11:51  INFO      [DataFirst] Page 5 → 99 new IDs (total: 536)
+2026-03-08 01:11:53  INFO      [DataFirst] Page 6 → 98 new IDs (total: 634)
+2026-03-08 01:11:55  INFO      [DataFirst] Page 7 → 0 new IDs (total: 634)
+2026-03-08 01:11:56  INFO      [DataFirst] No new IDs on page 7 — stopping
+2026-03-08 01:11:56  INFO      [DataFirst] Collected 634 unique study IDs
