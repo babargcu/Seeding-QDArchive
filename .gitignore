@@ -20,8 +20,10 @@ env/
 .DS_Store
 Thumbs.db
 
-# Downloaded research data — too large for GitHub (some files > 100 MB)
-data/downloads/
+# Downloaded research data — exclude only files > 100 MB (GitHub hard limit)
+data/downloads/harvard-dataverse/10876415/
+data/downloads/harvard-dataverse/11166029/
+data/downloads/harvard-dataverse/7436037/
 
 # SQLite WAL/SHM temp files
 data/*.db-shm
