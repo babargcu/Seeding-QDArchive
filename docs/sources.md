@@ -1,45 +1,90 @@
 # Data Sources for QDA / Qualitative Data Seeding
 
-## Implemented in pipeline
+## Active in pipeline
 
-| Source | URL | API | License notes | Status |
+### REST API scrapers
+
+| Source | URL | Scraper | API | License notes |
 |---|---|---|---|---|
-| **Zenodo** | https://zenodo.org/ | Public REST API | SPDX ids; CC variants well-documented | ✅ Implemented |
-| **Dryad** | https://datadryad.org/ | Public REST API v2 | All datasets CC0 by policy | ✅ Implemented |
-| **Harvard Dataverse** | https://dataverse.harvard.edu | Public REST API | Varies; checked per record | ✅ Implemented |
-| **DataverseNO** | https://dataverse.no/ | Public REST API (same as Dataverse) | Varies; checked per record | ✅ Implemented |
-| **QDR Syracuse** | https://data.qdr.syr.edu/ | Public REST API (same as Dataverse) | Varies; checked per record | ✅ Implemented |
-| **OSF** | https://osf.io/ | Public API v2 | Many projects lack a license — those are skipped | ✅ Implemented |
-| **Figshare** | https://figshare.com/ | Public REST API v2 | CC BY default; checked per record | ✅ Implemented |
-| **DANS EASY** | https://easy.dans.knaw.nl/ | OAI-PMH (standard) | Varies; dc:rights field checked | ✅ Implemented |
+| **Zenodo** | https://zenodo.org/ | `zenodo.py` | Public REST API | SPDX ids; CC variants well-documented |
+| **Dryad** | https://datadryad.org/ | `dryad.py` | Public REST API v2 | All datasets CC0 by policy |
+| **OSF** | https://osf.io/ | `osf.py` | Public API v2 | Projects without a license are skipped |
+| **Figshare** | https://figshare.com/ | `figshare.py` | Public REST API v2 | CC BY default; checked per record |
 
-## Requires registration / access agreement
+### Dataverse instances (all use `dataverse.py`)
 
-| Source | URL | Access | Notes |
+| Source | Base URL | Subtree | Notes |
 |---|---|---|---|
-| **UK Data Service** | https://ukdataservice.ac.uk/ | Free registration | Qualitative-specific collection; Nesstar API; some open datasets |
-| **Qualidata Network** | https://www.qualidatanet.com/en/ | Network of European archives | Directory — no direct download API; links to member archives |
-| **Qualiservice** | https://www.qualiservice.org/ | Registration required | German qualitative data archive; part of Qualidata Network |
-| **QualiBi** | https://www.qualidatanet.com/de/ | Contact required | German qualitative research network |
-| **ICPSR** | https://www.icpsr.umich.edu/ | Free registration | Large US social science archive; API key needed |
-| **AUSSDA** | https://aussda.at/ | Registration required | Austrian Social Science Data Archive |
-| **GESIS** | https://www.gesis.org/ | Varies | German social science data; some open |
+| **Harvard Dataverse** | https://dataverse.harvard.edu | — | Largest general Dataverse; license varies per record |
+| **Harvard Murray Archive** | https://dataverse.harvard.edu | `mra` | Henry A. Murray Research Archive; 900+ qualitative files |
+| **DataverseNO** | https://dataverse.no | — | Norwegian national research data repository |
+| **QDR Syracuse** | https://data.qdr.syr.edu | — | Qualitative Data Repository at Syracuse University |
 
-## How to add UK Data Service (manual steps)
+### OAI-PMH scrapers
 
-1. Register free at https://ukdataservice.ac.uk/
-2. Browse qualitative collections at https://ukdataservice.ac.uk/learning-hub/qualitative-data/
-3. Datasets with open access are marked; download metadata CSV from the catalogue
-4. Import the CSV into the pipeline DB using `src/database.py:insert_record()`
+| Source | URL | Scraper | OAI endpoint |
+|---|---|---|---|
+| **DANS EASY** | https://dans.knaw.nl/en/ | `dans.py` | https://easy.dans.knaw.nl/oai/ |
 
-## License policy (enforced in code)
+### HTML-scraped sources
+
+| Source | URL | Scraper | Notes |
+|---|---|---|---|
+| **DataFirst (UCT/SADA)** | https://datafirst.uct.ac.za/ | `datafirst.py` | South African NADA catalog; 594+ datasets |
+
+---
+
+## Inactive scrapers (files kept, not wired into pipeline)
+
+| Scraper file | Source | Notes |
+|---|---|---|
+| `cis.py` | CIS Spain | Liferay portal; removed from active pipeline |
+
+---
+
+## Search terms (`config.QDA_SEARCH_TERMS`)
+
+API-based scrapers (Zenodo, Dryad, OSF, Figshare, all Dataverse instances) search
+every source with each of these terms. OAI-PMH (DANS) and HTML scrapers (DataFirst)
+harvest all records and filter locally.
+
+**REFI-QDA formats:** `qdpx` · `refi-qda` · `qdc`
+
+**QDA tools:** `NVivo` · `ATLAS.ti` · `MAXQDA` · `QDA Miner` · `Quirkos` · `Dedoose` · `f4analyse` · `Transana`
+
+**File extensions:** `nvpx` · `atlproj` · `mqda`
+
+**Qualitative methods:** `qualitative data analysis` · `CAQDAS` · `interview study` · `interview transcript` · `focus group` · `ethnographic` · `qualitative research data` · `qualitative interview` · `oral history` · `grounded theory` · `thematic analysis` · `discourse analysis` · `narrative research` · `qualitative coding`
+
+---
+
+## License policy (`src/license_checker.py`)
 
 | License type | Decision |
 |---|---|
-| Any Creative Commons (CC0, CC BY, CC BY-SA, CC BY-NC, CC BY-ND, and NC/ND combinations) | ✅ ACCEPT |
+| Any Creative Commons (CC0, CC BY, CC BY-SA, CC BY-NC, CC BY-ND, combinations) | ✅ ACCEPT |
 | Open Data Commons (ODC-BY, ODbL, PDDL) | ✅ ACCEPT |
 | Public Domain / Open Government Licence | ✅ ACCEPT |
 | Data Licence Germany (DL-DE) | ✅ ACCEPT |
-| Empty / missing license | ❌ SKIP — treated as proprietary |
-| "All rights reserved" or proprietary text | ❌ SKIP |
+| Empty / missing license | ❌ SKIP |
+| "All rights reserved" or proprietary | ❌ SKIP |
 | Unrecognised text | ❌ SKIP |
+
+> **DataFirst exception:** all records are collected regardless of license.
+> The license is recorded in the DB for manual review but is not used as a filter.
+
+---
+
+## Adding a new Dataverse instance
+
+In `src/pipeline.py`, add one line to `_build_scrapers()`:
+
+```python
+DataverseScraper("https://your-dataverse.org", "Display Name", config.DATAVERSE_TOKEN)
+# With subtree (sub-collection):
+DataverseScraper("https://dataverse.harvard.edu", "My Sub-Archive", config.DATAVERSE_TOKEN, subtree="alias")
+```
+
+## Adding a new OAI-PMH source
+
+Copy `src/scrapers/dans.py` and adapt the endpoint URL, `source_name`, and keyword filter.

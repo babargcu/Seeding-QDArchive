@@ -3,8 +3,10 @@
 Seeding QDArchive — Data Acquisition Pipeline
 ==============================================
 
-Sources: Zenodo, Dryad, Harvard Dataverse, DataverseNO, QDR Syracuse,
-         OSF, Figshare, DANS EASY
+Sources: Zenodo, Dryad, OSF, Figshare,
+         Harvard Dataverse, Harvard Murray Research Archive,
+         DataverseNO, QDR Syracuse,
+         DANS EASY, DataFirst (UCT)
 
 Default behaviour (safe for a university project):
     • Scrapes ALL sources for metadata
@@ -47,7 +49,7 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("pipeline.log", encoding="utf-8"),
+        logging.FileHandler("pipeline.log", encoding="utf-8", delay=False),
     ],
 )
 
@@ -113,14 +115,13 @@ def main():
         budget_mb=args.budget,
     )
 
-    print("\n── Pipeline Summary ──────────────────────────────────")
+    print("\n--- Pipeline Summary ---")
     print(f"  Total records in DB  : {result['total']}")
     print(f"  Files downloaded     : {result['downloaded']}")
     print(f"  Unique sources       : {result['sources']}")
     print(f"  Unique licenses      : {result['licenses']}")
     print(f"  Log file             : pipeline.log")
     print(f"  Metadata CSV         : reports/")
-    print("──────────────────────────────────────────────────────\n")
 
 
 if __name__ == "__main__":

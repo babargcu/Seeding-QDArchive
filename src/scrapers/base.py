@@ -38,9 +38,11 @@ class BaseScraper(ABC):
             logger.info("[%s] Searching: '%s'", self.source_name, term)
             try:
                 results = self._search(term)
+                for r in results:
+                    r.setdefault("query_string", term)
                 records.extend(results)
                 logger.info(
-                    "[%s] '%s' → %d records with open licenses",
+                    "[%s] '%s' -> %d records with open licenses",
                     self.source_name, term, len(results),
                 )
             except Exception as exc:
@@ -63,8 +65,19 @@ class BaseScraper(ABC):
     # ── Helpers ────────────────────────────────────────────────────────────────
 
     def _get(self, url: str, **kwargs) -> requests.Response:
-        resp = self.session.get(url, timeout=config.REQUEST_TIMEOUT, **kwargs)
-        resp.raise_for_status()
+        """GET with automatic retry on 429 (respects Retry-After if present)."""
+        for attempt in range(4):
+            resp = self.session.get(url, timeout=config.REQUEST_TIMEOUT, **kwargs)
+            if resp.status_code != 429:
+                resp.raise_for_status()
+                return resp
+            wait = int(resp.headers.get("Retry-After", 2 ** (attempt + 1)))
+            logger.warning(
+                "[%s] 429 rate-limited — waiting %ds (attempt %d/4): %s",
+                self.source_name, wait, attempt + 1, url,
+            )
+            time.sleep(wait)
+        resp.raise_for_status()   # raise after 4 failed attempts
         return resp
 
     def _check_license(self, license_text: str, title: str = "") -> tuple[bool, str]:

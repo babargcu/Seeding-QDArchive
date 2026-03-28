@@ -1,6 +1,9 @@
 """
 Central configuration for the Seeding QDArchive pipeline.
-Sources: DataFirst (UCT) and CIS (Spain).
+
+Active sources (2):
+    DataFirst (UCT, South Africa), CIS (Spain).
+
 Copy .env.example to .env for optional API keys.
 """
 
@@ -20,66 +23,97 @@ DOCS_DIR   = BASE_DIR / "docs"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
+# ── Optional API tokens (set in .env for higher rate limits / auth) ────────────
+ZENODO_TOKEN             = os.getenv("ZENODO_TOKEN",             "")
+HARVARD_DATAVERSE_TOKEN  = os.getenv("HARVARD_DATAVERSE_TOKEN",  "")  # harvard.edu instances only
+DATAVERSENO_TOKEN        = os.getenv("DATAVERSENO_TOKEN",        "")  # dataverse.no
+QDR_TOKEN                = os.getenv("QDR_TOKEN",                "")  # data.qdr.syr.edu
+OSF_TOKEN                = os.getenv("OSF_TOKEN",                "")
+FIGSHARE_TOKEN           = os.getenv("FIGSHARE_TOKEN",           "")
+
+# Legacy alias — kept so existing .env files with DATAVERSE_TOKEN still work
+DATAVERSE_TOKEN = os.getenv("DATAVERSE_TOKEN", HARVARD_DATAVERSE_TOKEN)
+
 # ── Scraper settings ───────────────────────────────────────────────────────────
 REQUEST_TIMEOUT  = 30     # seconds per HTTP request
 REQUEST_DELAY    = 1.0    # seconds between requests (be polite to servers)
-MAX_RECORDS      = 2000   # safety cap for DataFirst catalog pagination
-PAGE_SIZE        = 100    # results per catalog page (DataFirst)
-SCRAPER_WORKERS  = 2      # only 2 sources now — run in parallel
+MAX_RECORDS      = 200    # max records per search term per source (API scrapers)
+PAGE_SIZE        = 25     # results per API page
+SCRAPER_WORKERS  = 8      # parallel source scrapers
 
-# ── CIS study number range ─────────────────────────────────────────────────────
-# CIS studies are numbered sequentially since 1963 (~1 to 3600+).
-# Probe this range to discover which studies have accessible documents.
-# Reduce CIS_STUDY_END or narrow the range to limit probe time.
-CIS_STUDY_START = int(os.getenv("CIS_STUDY_START", "2000"))
-CIS_STUDY_END   = int(os.getenv("CIS_STUDY_END",   "3600"))
-
-# ── Search terms (used for logging / future filtering) ─────────────────────────
+# ── Search terms ───────────────────────────────────────────────────────────────
 QDA_SEARCH_TERMS = [
-    # REFI-QDA standard
-    "qdpx",
-    "refi-qda",
-    "qdc",
-    # QDA tools
-    "NVivo",
-    "ATLAS.ti",
-    "MAXQDA",
-    "QDA Miner",
-    "Quirkos",
-    "Dedoose",
-    # General qualitative
-    "qualitative data analysis",
-    "CAQDAS",
-    "interview study",
-    "interview transcript",
-    "focus group",
-    "ethnographic",
-    "qualitative research data",
+    # REFI-QDA standard file formats
+    "qdpx", "refi-qda", "qdc",
+    # QDA software names
+    "NVivo", "ATLAS.ti", "MAXQDA", "QDA Miner", "Quirkos", "Dedoose",
+    "f4analyse", "Transana",
+    # Key file extensions (some repositories index filenames/descriptions)
+    "nvpx", "atlproj", "mqda",
+    # Qualitative research methods and data types
+    "qualitative data analysis", "CAQDAS",
+    "interview study", "interview transcript",
+    "focus group", "ethnographic",
+    "qualitative research data", "qualitative interview",
+    "oral history", "grounded theory",
+    "thematic analysis", "discourse analysis",
+    "narrative research", "qualitative coding",
 ]
 
 # ── File type groups ───────────────────────────────────────────────────────────
 
 # Highest priority — QDA files (small, rare, high research value)
-# REFI-QDA standard:   .qdpx (project exchange), .qdc (codebook exchange)
-# NVivo:               .nvp (<=11), .nvpx (12+)
-# ATLAS.ti:            .atlproj (8+), .atlcb (Cloud)
-# MAXQDA:              .mx18/.mx19/.mx20/.mx22 (versioned), .mxd (legacy)
-# QDA Miner:           .qdp (legacy), .qlt (Lite 3.0+)
-# f4analyse:           .f4a
-# Quirkos:             .quirkos
-# Transana:            .tns
-# Generic:             .qda
-# Spec: https://www.qdasoftware.org/
+# Sources:
+#   REFI-QDA standard:  https://www.qdasoftware.org/
+#   MAXQDA file types:  https://www.maxqda.com/help/technical-data-and-information/file-management
+#   NVivo:              https://lumivero.com/products/nvivo/
+#   ATLAS.ti:           https://atlasti.com/
+#   QDA Miner:          https://provalisresearch.com/products/qualitative-data-analysis-software/
 QDA_EXTENSIONS = {
-    ".qdpx", ".qdc", ".qde",               # REFI-QDA (project, codebook, internal XML)
-    ".qda",                                 # generic
-    ".nvp", ".nvpx",                        # NVivo
-    ".atlproj", ".atlcb",                   # ATLAS.ti
-    ".mx18", ".mx19", ".mx20", ".mx22", ".mxd",  # MAXQDA
-    ".qdp", ".qlt",                         # QDA Miner / QDA Miner Lite
-    ".f4a",                                 # f4analyse
-    ".quirkos",                             # Quirkos
-    ".tns",                                 # Transana
+    # REFI-QDA standard (.qdpx = ZIP bundle; .qdc = codebook XML; .qde = internal project XML)
+    ".qdpx", ".qdc", ".qde",
+
+    # NVivo (Lumivero) — .nvp = NVivo ≤11 (Windows); .nvpx = NVivo 12+
+    ".nvp", ".nvpx",
+
+    # ATLAS.ti — .atlproj/.atlasproj = 8+ project bundle; .atlcb = Cloud; .hpr7 = v7 legacy
+    ".atlproj", ".atlasproj", ".atlcb", ".hpr7",
+
+    # MAXQDA — current formats
+    ".mqda",                                # current project (Windows + macOS)
+    ".mqex",                                # Exchange file (current)
+    ".mqtc",                                # TeamCloud project
+    # MAXQDA — versioned project files (newest → oldest)
+    ".mx24",                                # MAXQDA 24
+    ".mex24",                               # MAXQDA 24 Exchange
+    ".mx22",                                # MAXQDA 2022
+    ".mex22",                               # MAXQDA 2022 Exchange
+    ".mx20",                                # MAXQDA 2020
+    ".mx18",                                # MAXQDA 2018
+    ".mx12",                                # MAXQDA 12
+    ".mx11",                                # MAXQDA 11 (macOS)
+    ".mx5",                                 # MAXQDA 11 (Windows)
+    ".mx4",                                 # MAXQDA 10
+    ".mx3",                                 # MAXQDA 2007
+    ".mx2",                                 # MAXQDA 2
+    ".mxd",                                 # legacy data file (pre-2018, unofficial)
+
+    # QDA Miner / QDA Miner Lite (Provalis Research)
+    ".ppj", ".pprj",                        # QDA Miner project formats
+    ".qdp",                                 # QDA Miner 1.x–4.x
+    ".qlt",                                 # QDA Miner Lite 3.0+
+
+    # f4analyse / f4x (audiotranskription.de)
+    ".f4a",
+
+    # Quirkos
+    ".quirkos",
+
+    # Transana
+    ".tns",
+
+    # Generic catch-all
+    ".qda",
 }
 
 # Medium priority — text documents (transcripts, articles)
@@ -123,5 +157,11 @@ DOWNLOAD_EXTENSIONS_BY_SCOPE = {
 # ── Storage budget ─────────────────────────────────────────────────────────────
 STORAGE_BUDGET_MB  = int(os.getenv("STORAGE_BUDGET_MB", "2048"))  # 2 GB default
 MAX_FILE_SIZE_MB   = int(os.getenv("MAX_FILE_SIZE_MB",  "100"))   # skip files > 100 MB
+
+# ── CIS (Centro de Investigaciones Sociológicas) ──────────────────────────────
+# Study number range to probe.  CIS numbers are sequential integers; the
+# scraper HEAD-requests each number to discover which ones exist.
+CIS_STUDY_START = int(os.getenv("CIS_STUDY_START", "2500"))
+CIS_STUDY_END   = int(os.getenv("CIS_STUDY_END",   "3900"))
 
 # License checking is handled centrally in src/license_checker.py

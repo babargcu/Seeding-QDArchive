@@ -38,6 +38,8 @@ _OTHER_OPEN = [
     "open government license",
     "data licence germany",          # DANS / German archives
     "dl-de",
+    "dans licence",                  # DANS Data Station open reuse licence
+    "dans license",
     "community data license",
     "cdla",
     "mit license",
@@ -130,5 +132,7 @@ def classify(license_text: str) -> str:
         return "Open Government Licence"
     if "dl-de" in t or "data licence germany" in t:
         return "Data Licence Germany"
+    if "dans licence" in t or "dans license" in t:
+        return "DANS Licence"
 
     return text[:80]   # fallback: truncated original

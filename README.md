@@ -14,14 +14,16 @@ This repository implements **Part 1: Data Acquisition**.
 ```
 Scrape metadata (parallel)     Download files        Export
 ──────────────────────────     ──────────────        ──────
-Zenodo          ──┐            QDA files only        metadata.db
-Dryad           ──┤            (.qdpx, .nvp,         └──▶ reports/*.csv
-Harvard DV      ──┤──▶ DB ───▶  .atlproj, …)
-DataverseNO     ──┤            Audio/video:
-QDR Syracuse    ──┤            URL saved only,
-OSF             ──┤            never downloaded
-Figshare        ──┤
-DANS EASY       ──┘
+Zenodo              ──┐        QDA files only        metadata.db
+Dryad               ──┤        (.qdpx, .nvp,         └──▶ reports/*.csv
+Harvard Dataverse   ──┤──▶ DB ─▶ .atlproj, …)
+Harvard Murray Arch ──┤        Audio/video:
+DataverseNO         ──┤        URL saved only,
+QDR Syracuse        ──┤        never downloaded
+OSF                 ──┤
+Figshare            ──┤
+DANS EASY           ──┤
+DataFirst (UCT)     ──┘
 ```
 
 **Default behaviour (safe, recommended):**
@@ -87,7 +89,7 @@ python main.py --no-download --sources Zenodo
 ### Test B — Verify the database
 
 ```cmd
-python -c "import sqlite3; conn = sqlite3.connect('data/metadata.db'); print(conn.execute('SELECT source, COUNT(*) FROM datasets GROUP BY source').fetchall())"
+python -c "import sqlite3; conn = sqlite3.connect('data/metadata.db'); print(conn.execute('SELECT r.name, COUNT(*) FROM projects p JOIN repositories r ON p.repository_id=r.id GROUP BY r.name').fetchall())"
 ```
 
 Expected output: something like `[('Zenodo', 34)]`
@@ -142,7 +144,7 @@ python main.py --no-scrape --no-download
 python main.py --help
 ```
 
-**Available sources:** Zenodo, Dryad, Harvard Dataverse, DataverseNO, QDR Syracuse, OSF, Figshare, DANS EASY
+**Available sources:** Zenodo, Dryad, OSF, Figshare, Harvard Dataverse, Harvard Murray Archive, DataverseNO, QDR Syracuse, DANS EASY, DataFirst
 
 ---
 
@@ -204,35 +206,58 @@ Seeding-QDArchive/
 | OSF | https://osf.io | Public REST | No (optional) |
 | Figshare | https://figshare.com | Public REST | No (optional) |
 | DANS EASY | https://easy.dans.knaw.nl | OAI-PMH | No |
+| DataFirst (UCT) | https://www.datafirst.uct.ac.za | HTML scraping | No |
 
-See `docs/sources.md` for additional sources (UK Data Service, ICPSR, Qualiservice) that require free registration.
+See `docs/sources.md` for full notes on each source.
 
 ---
 
 ## Database schema
 
-One row per file found. Exported as CSV to `reports/` after each run.
+Normalized SQLite database at `data/metadata.db`. Exported as a flat CSV to `reports/` after each run.
+
+**Tables:** `repositories` → `projects` → `files`, `keywords`, `person_role`, `licenses`
+
+### projects (one row per dataset/project)
 
 | Column | Description |
 |---|---|
-| `source` | Source name |
-| `source_link` | URL to the dataset page |
-| `download_url` | Direct file URL |
+| `id` | Auto-increment primary key |
+| `query_string` | Search term that found this project |
+| `repository_id` | FK → repositories |
+| `repository_url` | Source base URL |
+| `project_url` | URL to the dataset page |
 | `title` | Dataset title |
-| `description` | Abstract |
-| `authors` | Pipe-separated authors |
-| `date_published` | ISO date |
-| `license` | License name (e.g. `CC BY 4.0`) |
-| `license_url` | Full license URL |
-| `file_type` | Extension without dot |
-| `file_name` | Original filename |
-| `file_size` | Size in bytes |
-| `project_scope` | `QDA` / `Qualitative` / `Media` / `Other` |
-| `keywords` | Pipe-separated tags |
+| `description` | Abstract (truncated at 4000 chars) |
 | `language` | Language code |
+| `doi` | Fully-qualified DOI URL |
+| `upload_date` | ISO date published |
+| `download_date` | Timestamp when scraped |
+| `download_repository_folder` | Filesystem-safe source folder name |
+| `download_project_folder` | Filesystem-safe project folder name |
+| `download_method` | `API-CALL` or `SCRAPING` |
+
+### files (one row per file within a project)
+
+| Column | Description |
+|---|---|
+| `id` | Auto-increment primary key |
+| `project_id` | FK → projects |
+| `file_name` | Original filename |
+| `file_type` | Extension without dot |
+| `download_url` | Direct file URL |
+| `file_size` | Size in bytes |
 | `local_path` | Relative path after download |
-| `downloaded` | `1` if file saved to disk |
-| `download_date` | Timestamp of download |
+| `status` | `PENDING` / `SUCCESS` / `FAILED` / `SKIPPED` |
+
+### Other tables
+
+| Table | Content |
+|---|---|
+| `repositories` | Known source repositories (11 pre-seeded) |
+| `keywords` | One keyword per row per project |
+| `person_role` | Authors and depositors per project |
+| `licenses` | One license per row per project |
 
 ---
 

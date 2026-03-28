@@ -177,13 +177,16 @@ class CISScraper(BaseScraper):
 
         return found
 
+    # Short timeout used only for existence probing — avoids 30s waits on dead URLs
+    _PROBE_TIMEOUT = 5
+
     def _study_exists(self, n: int) -> bool:
         """Return True if at least one known document URL for study N is live."""
         for _label, tmpl in _DOC_TEMPLATES[:2]:  # check marginals only for probe
             url = tmpl.format(N=n)
             try:
                 resp = self.session.head(
-                    url, timeout=config.REQUEST_TIMEOUT, allow_redirects=True
+                    url, timeout=self._PROBE_TIMEOUT, allow_redirects=True
                 )
                 if resp.status_code == 200:
                     return True
@@ -254,7 +257,7 @@ class CISScraper(BaseScraper):
         for url in candidates:
             try:
                 r = self.session.head(
-                    url, timeout=config.REQUEST_TIMEOUT, allow_redirects=True
+                    url, timeout=self._PROBE_TIMEOUT, allow_redirects=True
                 )
                 if r.status_code == 200:
                     return url

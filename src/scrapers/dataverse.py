@@ -2,9 +2,13 @@
 Generic Dataverse scraper — works with any repository running Dataverse software.
 
 Pre-configured instances (created in pipeline.py):
-    - Harvard Dataverse  https://dataverse.harvard.edu
-    - DataverseNO        https://dataverse.no
-    - QDR Syracuse       https://data.qdr.syr.edu
+    - Harvard Dataverse      https://dataverse.harvard.edu
+    - Harvard Murray Archive https://dataverse.harvard.edu  (subtree=murray)
+    - DataverseNO            https://dataverse.no
+    - QDR Syracuse           https://data.qdr.syr.edu
+    - ADA                    https://dataverse.ada.edu.au
+    - AUSSDA                 https://data.aussda.at
+    - Open Data Uni Halle    https://opendata.uni-halle.de
 
 Dataverse Search API docs:
     https://guides.dataverse.org/en/latest/api/search.html
@@ -34,10 +38,12 @@ class DataverseScraper(BaseScraper):
         base_url: str = "https://dataverse.harvard.edu",
         source_name: str = "Harvard Dataverse",
         api_token: str = "",
+        subtree: str = "",
     ):
         super().__init__()
         self.base_url    = base_url.rstrip("/")
         self.source_name = source_name
+        self.subtree     = subtree          # restrict search to a sub-dataverse
         if api_token:
             self.session.headers["X-Dataverse-key"] = api_token
 
@@ -54,6 +60,8 @@ class DataverseScraper(BaseScraper):
                 "sort":     "date",
                 "order":    "desc",
             }
+            if self.subtree:
+                params["subtree"] = self.subtree
             try:
                 data = self._get(
                     f"{self.base_url}/api/search", params=params
@@ -94,6 +102,7 @@ class DataverseScraper(BaseScraper):
                     "source":         self.source_name,
                     "source_link":    dataset_url,
                     "download_url":   download_url,
+                    "doi":            dataset_pid.removeprefix("doi:") if dataset_pid else "",
                     "title":          item.get("dataset_name", fname),
                     "description":    item.get("dataset_citation", ""),
                     "authors":        " | ".join(item.get("authors", [])),

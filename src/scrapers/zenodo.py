@@ -60,7 +60,7 @@ class ZenodoScraper(BaseScraper):
                     continue
 
                 license_url = self._cc_url(license_id)
-                record_url  = hit.get("links", {}).get("html", "")
+                record_url  = hit.get("links", {}).get("self_html", "") or hit.get("links", {}).get("html", "")
                 authors     = " | ".join(
                     c.get("name", "") for c in metadata.get("creators", [])
                 )
@@ -81,6 +81,7 @@ class ZenodoScraper(BaseScraper):
                         "source":         self.source_name,
                         "source_link":    record_url,
                         "download_url":   dl_url,
+                        "doi":            metadata.get("doi", ""),
                         "title":          title,
                         "description":    metadata.get("description", ""),
                         "authors":        authors,

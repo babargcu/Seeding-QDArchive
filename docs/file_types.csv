@@ -2,17 +2,32 @@ extension,category,full_name,tool,format_spec,notes
 .qdpx,QDA - REFI,REFI-QDA Project Exchange,ATLAS.ti / Dedoose / f4analyse / MAXQDA / NVivo / QDA Miner / Quirkos / Transana,https://www.qdasoftware.org/,"ZIP archive containing project.qde (XML) + sources/ folder. Interoperability standard for full project exchange."
 .qdc,QDA - REFI,REFI-QDA Codebook Exchange,ATLAS.ti / Dedoose / f4analyse / MAXQDA / NVivo / QDA Miner / Quirkos / Transana,https://www.qdasoftware.org/,"XML file for exchanging code systems (code trees + memos) between tools. Launched March 2018. Validated by XSD schema."
 .qde,QDA - REFI,REFI-QDA Project XML (internal),All REFI-supporting tools,https://www.qdasoftware.org/,"XML file found inside a .qdpx ZIP archive (named project.qde). Not normally distributed standalone."
-.nvp,QDA,NVivo Project (legacy Windows),NVivo <=11,,Windows-only NVivo project file. Binary format.
+.nvp,QDA,NVivo Project (legacy Windows),NVivo ≤11,,Windows-only NVivo project file. Binary format.
 .nvpx,QDA,NVivo Project,NVivo 12+,,Cross-platform NVivo project file. Can export to .qdpx.
-.atlproj,QDA,ATLAS.ti Project,ATLAS.ti 8+,,ZIP-based project bundle. Can export to .qdpx.
+.atlproj,QDA,ATLAS.ti Project,ATLAS.ti 8+ (Windows),,ZIP-based project bundle. Can export to .qdpx.
+.atlasproj,QDA,ATLAS.ti Project (variant),ATLAS.ti 8+,,Alternative extension spelling observed in some ATLAS.ti releases; same format as .atlproj.
 .atlcb,QDA,ATLAS.ti Cloud Bundle,ATLAS.ti Cloud,,Cloud project backup format.
-.mx18,QDA,MAXQDA 18 Project,MAXQDA 18,,MAXQDA proprietary project format.
-.mx19,QDA,MAXQDA 19 Project,MAXQDA 19,,
-.mx20,QDA,MAXQDA 20 Project,MAXQDA 20,,
-.mx22,QDA,MAXQDA 22 Project,MAXQDA 22,,
-.mxd,QDA,MAXQDA Data file (legacy),MAXQDA <18,,Legacy data file; superseded by versioned .mx* formats.
-.qdp,QDA,QDA Miner Project,QDA Miner (Provalis Research),,Native project format for QDA Miner 1.x–4.x. Can import .qdpx.
-.qlt,QDA,QDA Miner Lite Project,QDA Miner Lite 3.0+,,New format introduced in QDA Miner Lite 3.0; QDA Miner 2023+ can import .qlt files.
+.hpr7,QDA,ATLAS.ti 7 Project (legacy),ATLAS.ti 7,,Legacy Hermeneutic Unit bundle from ATLAS.ti 7 and earlier.
+.mqda,QDA,MAXQDA Project,MAXQDA (current — Windows + macOS),https://www.maxqda.com/help/technical-data-and-information/file-management,Current native project format for Windows and macOS.
+.mqex,QDA,MAXQDA Exchange File,MAXQDA (current),,Exchange file for sharing projects and teamwork. Current version.
+.mqtc,QDA,MAXQDA TeamCloud Project,MAXQDA (current),,TeamCloud collaboration project file.
+.mx24,QDA,MAXQDA 24 Project,MAXQDA 24,,MAXQDA 24 versioned project file for Windows and macOS.
+.mex24,QDA,MAXQDA 24 Exchange File,MAXQDA 24,,Exchange file for MAXQDA 24 projects.
+.mx22,QDA,MAXQDA 2022 Project,MAXQDA 2022,,MAXQDA 2022 versioned project file for Windows and macOS.
+.mex22,QDA,MAXQDA 2022 Exchange File,MAXQDA 2022,,Exchange file for MAXQDA 2022 projects.
+.mx20,QDA,MAXQDA 2020 Project,MAXQDA 2020,,
+.mx18,QDA,MAXQDA 2018 Project,MAXQDA 2018,,
+.mx12,QDA,MAXQDA 12 Project,MAXQDA 12,,
+.mx11,QDA,MAXQDA 11 Project (macOS),MAXQDA 11 macOS,,
+.mx5,QDA,MAXQDA 11 Project (Windows),MAXQDA 11 Windows,,
+.mx4,QDA,MAXQDA 10 Project,MAXQDA 10,,
+.mx3,QDA,MAXQDA 2007 Project,MAXQDA 2007,,
+.mx2,QDA,MAXQDA 2 Project,MAXQDA 2,,
+.mxd,QDA,MAXQDA Data File (legacy),MAXQDA <2018,,Legacy data file referenced in some older deposits; not listed in current official MAXQDA documentation.
+.ppj,QDA,QDA Miner Project,QDA Miner (Provalis Research),,Native project format for QDA Miner.
+.pprj,QDA,QDA Miner Project,QDA Miner (Provalis Research),,Alternative project file format for QDA Miner.
+.qdp,QDA,QDA Miner Project (legacy),QDA Miner 1.x–4.x,,Older native format; QDA Miner 2023+ can import .qdp files.
+.qlt,QDA,QDA Miner Lite Project,QDA Miner Lite 3.0+,,Introduced in QDA Miner Lite 3.0; QDA Miner 2023+ can also import .qlt files.
 .f4a,QDA,f4analyse Project,f4analyse / f4x,,German qualitative analysis tool. Supports REFI-QDA export.
 .quirkos,QDA,Quirkos Project,Quirkos,,Simple visual QDA tool. Supports REFI-QDA export to .qdpx.
 .tns,QDA,Transana Project,Transana,,Video/audio qualitative analysis tool. Supports REFI-QDA export.

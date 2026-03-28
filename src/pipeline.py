@@ -1,16 +1,24 @@
 """
-Pipeline orchestrator — DataFirst + CIS only.
+Pipeline orchestrator — all active sources.
 
-Sources:
-    DataFirst (UCT, South Africa) — NADA catalog HTML scraping
-    CIS (Spain) — Liferay portal, document URL probing
+Sources
+-------
+API-based:
+    Zenodo, Dryad, OSF, Figshare
 
-Phases:
-    1. Scrape  — collect metadata → DB  (all records, license recorded not filtered)
-    2. Download — only files matching the chosen scope (default: qda-only)
-    3. Export  — write full metadata CSV to reports/
+Dataverse instances (all use the same DataverseScraper):
+    Harvard Dataverse, Harvard Murray Research Archive (subtree=mra),
+    DataverseNO, QDR Syracuse, DANS SSH
 
-All records are collected regardless of license.
+HTML-scraped:
+    DataFirst (UCT / SADA), CIS (Spain)
+
+Phases
+------
+1. Scrape  — parallel metadata collection → SQLite DB
+2. Download — budget-aware file download (QDA files only by default)
+3. Export  — full metadata CSV written to reports/
+
 Audio/video: NEVER downloaded — URL always recorded in DB.
 """
 
@@ -19,16 +27,58 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import config
-from src.database import get_connection, insert_record, mark_downloaded, export_csv, stats
+from src.database import get_connection, insert_record, mark_downloaded, get_pending_files, export_csv, stats
 from src.downloader import Downloader, StorageBudgetExceeded
+from src.scrapers.zenodo    import ZenodoScraper
+from src.scrapers.dryad     import DryadScraper
+from src.scrapers.osf       import OSFScraper
+from src.scrapers.figshare  import FigshareScraper
+from src.scrapers.dataverse import DataverseScraper
 from src.scrapers.datafirst import DataFirstScraper
-from src.scrapers.cis import CISScraper
+from src.scrapers.cis       import CISScraper
 
 logger = logging.getLogger(__name__)
 
 
 def _build_scrapers() -> list:
+    """Instantiate all active scrapers."""
     return [
+        # ── REST API scrapers ──────────────────────────────────────────────────
+        ZenodoScraper(),
+        DryadScraper(),
+        OSFScraper(),
+        FigshareScraper(),
+
+        # ── Dataverse instances ────────────────────────────────────────────────
+        DataverseScraper(
+            "https://dataverse.harvard.edu",
+            "Harvard Dataverse",
+            config.HARVARD_DATAVERSE_TOKEN,
+        ),
+        DataverseScraper(
+            "https://dataverse.harvard.edu",
+            "Harvard Murray Archive",
+            config.HARVARD_DATAVERSE_TOKEN,
+            subtree="mra",          # alias for Murray Research Archive Dataverse
+        ),
+        DataverseScraper(
+            "https://dataverse.no",
+            "DataverseNO",
+            config.DATAVERSENO_TOKEN,
+        ),
+        DataverseScraper(
+            "https://data.qdr.syr.edu",
+            "QDR Syracuse",
+            config.QDR_TOKEN,
+        ),
+
+        # ── DANS Data Station (SSH) — runs Dataverse software ─────────────────
+        DataverseScraper(
+            "https://ssh.datastations.nl",
+            "DANS SSH",
+        ),
+
+        # ── HTML-scraped sources ───────────────────────────────────────────────
         DataFirstScraper(),
         CISScraper(),
     ]
@@ -74,7 +124,7 @@ def run(
             if not sources or s.source_name in sources
         ]
         logger.info(
-            "Scraping %d source(s) with up to %d workers in parallel…",
+            "Scraping %d source(s) with up to %d workers in parallel...",
             len(active), config.SCRAPER_WORKERS,
         )
 
@@ -98,26 +148,9 @@ def run(
 
     # ── Phase 2: Download ──────────────────────────────────────────────────────
     if download:
-        ext_csv   = ", ".join(f"'{e.lstrip('.')}'" for e in downloadable_exts)
-        qda_csv   = ", ".join(f"'{e.lstrip('.')}'" for e in config.QDA_EXTENSIONS)
-        media_csv = ", ".join(f"'{e.lstrip('.')}'" for e in config.MEDIA_EXTENSIONS)
-
-        rows = conn.execute(f"""
-            SELECT id, source, download_url, file_name, file_type, local_dir
-            FROM   datasets
-            WHERE  downloaded = 0
-              AND  download_url != ''
-              AND  file_type IN ({ext_csv})
-            ORDER BY
-                   CASE WHEN file_type IN ({qda_csv}) THEN 0 ELSE 1 END,
-                   id
-        """).fetchall()
-
-        media_count = conn.execute(
-            f"SELECT COUNT(*) FROM datasets WHERE file_type IN ({media_csv})"
-        ).fetchone()[0]
-
         budget = budget_mb or config.STORAGE_BUDGET_MB
+        rows, media_count = get_pending_files(conn, downloadable_exts)
+
         logger.info(
             "=== Download phase (scope=%s, budget=%d MB) ===\n"
             "    To download : %d files\n"
@@ -128,10 +161,12 @@ def run(
         downloader = Downloader(budget_mb=budget)
 
         for row in rows:
-            # Structure: data/downloads/{source}/{local_dir}/{file_name}
-            study_dir = _safe_dirname(row["local_dir"]) if row["local_dir"] else f"study_{row['id']}"
-            dest_dir  = config.DATA_DIR / _safe_dirname(row["source"]) / study_dir
-            fname     = row["file_name"] or f"file_{row['id']}.{row['file_type']}"
+            dest_dir = (
+                config.DATA_DIR
+                / row["download_repository_folder"]
+                / row["download_project_folder"]
+            )
+            fname = row["file_name"] or f"file_{row['id']}.{row['file_type']}"
             try:
                 dest = downloader.download(row["download_url"], dest_dir, fname)
                 if dest:
@@ -149,7 +184,7 @@ def run(
     # ── Phase 3: Export CSV ────────────────────────────────────────────────────
     if export:
         csv_path = export_csv(conn)
-        logger.info("CSV exported → %s", csv_path)
+        logger.info("CSV exported -> %s", csv_path)
 
     result = stats(conn)
     conn.close()
@@ -158,8 +193,3 @@ def run(
         result["total"], result["downloaded"], result["sources"], result["licenses"],
     )
     return result
-
-
-def _safe_dirname(name: str) -> str:
-    keep = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- ")
-    return "".join(c if c in keep else "_" for c in name).strip()

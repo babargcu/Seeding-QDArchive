@@ -97,7 +97,7 @@ class DataFirstScraper(BaseScraper):
                 ids.append(idno)
 
             logger.info(
-                "[DataFirst] Page %d → %d new IDs (total: %d)",
+                "[DataFirst] Page %d -> %d new IDs (total: %d)",
                 page, len(new_ids), len(ids),
             )
 

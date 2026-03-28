@@ -2,15 +2,16 @@
 DANS (Data Archiving and Networked Services) scraper.
 Uses the OAI-PMH standard metadata harvesting protocol.
 
-Endpoint: https://easy.dans.knaw.nl/oai/
+Endpoint: https://ssh.datastations.nl/oai  (DANS SSH Data Station)
 Protocol: OAI-PMH 2.0 with Dublin Core (oai_dc) metadata format
 Docs: https://dans.knaw.nl/en/data-services-and-infrastructure/
 
-Note: OAI-PMH provides metadata and record-page URLs only.
-Direct file download requires following the landing page URL.
-We record all metadata; download_url points to the landing page
-(a human must visit to download the actual file, unless you add
-a page-scraping step later).
+Note: The original DANS EASY endpoint (easy.dans.knaw.nl) was migrated to
+the DANS Data Stations in 2023. SSH (Social Sciences & Humanities) data
+is now at ssh.datastations.nl.
+
+OAI-PMH provides metadata and record-page URLs only.
+download_url points to the landing page.
 
 DANS licenses vary — we skip records without a recognized open license.
 """
@@ -24,7 +25,7 @@ from .base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
-DANS_OAI = "https://easy.dans.knaw.nl/oai/"
+DANS_OAI = "https://ssh.datastations.nl/oai"
 
 # Dublin Core namespace
 DC  = "http://purl.org/dc/elements/1.1/"
@@ -32,7 +33,7 @@ OAI = "http://www.openarchives.org/OAI/2.0/"
 
 
 class DANSScraper(BaseScraper):
-    source_name = "DANS EASY"
+    source_name = "DANS SSH"
 
     def fetch_all(self) -> list[dict]:
         """

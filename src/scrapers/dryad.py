@@ -60,15 +60,16 @@ class DryadScraper(BaseScraper):
                 if not ok:
                     continue  # shouldn't happen, but be strict
 
-                # Fetch files for this dataset
-                files = self._fetch_files(ds_id)
+                # Fetch files for this dataset (use version link for new Dryad API)
+                ver_href = ds.get("_links", {}).get("stash:version", {}).get("href", "")
+                files = self._fetch_files(ds_id, ver_href)
                 for f in files:
                     fname = f.get("path", "")
                     ext   = ("." + fname.rsplit(".", 1)[-1].lower()) if "." in fname else ""
                     if ext not in config.ALL_WANTED_EXTENSIONS:
                         continue
 
-                    dl_url = f.get("_links", {}).get("stash:file-download", {}).get("href", "")
+                    dl_url = f.get("_links", {}).get("stash:download", {}).get("href", "")
                     if not dl_url:
                         continue
                     # Dryad download links are relative — make absolute
@@ -79,6 +80,7 @@ class DryadScraper(BaseScraper):
                         "source":         self.source_name,
                         "source_link":    ds_url or f"https://datadryad.org/dataset/{ds_id}",
                         "download_url":   dl_url,
+                        "doi":            ds_id.removeprefix("doi:") if ds_id else "",
                         "title":          title,
                         "description":    abstract,
                         "authors":        authors,
@@ -98,13 +100,12 @@ class DryadScraper(BaseScraper):
 
         return records
 
-    def _fetch_files(self, dataset_id: str) -> list[dict]:
+    def _fetch_files(self, dataset_id: str, ver_href: str = "") -> list[dict]:
         try:
-            # dataset_id is a DOI like "doi:10.5061/dryad.xxxxx"
-            encoded = dataset_id.replace("/", "%2F")
-            url     = f"{DRYAD_API}/datasets/{encoded}/files"
-            data    = self._get(url).json()
-            return data.get("_embedded", {}).get("stash:files", [])
+            if ver_href:
+                # ver_href is /api/v2/versions/{id} — append /files to get file list
+                data = self._get(f"https://datadryad.org{ver_href}/files").json()
+                return data.get("_embedded", {}).get("stash:files", [])
         except Exception as exc:
             logger.warning("[Dryad] File list error for %s: %s", dataset_id, exc)
-            return []
+        return []

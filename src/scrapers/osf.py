@@ -15,7 +15,7 @@ from .base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
-OSF_NODES = "https://api.osf.io/v2/nodes/"
+OSF_SEARCH = "https://api.osf.io/v2/search/projects/"
 
 
 class OSFScraper(BaseScraper):
@@ -26,46 +26,58 @@ class OSFScraper(BaseScraper):
         if config.OSF_TOKEN:
             self.session.headers["Authorization"] = f"Bearer {config.OSF_TOKEN}"
 
-    def _search(self, term: str) -> list[dict]:
-        records = []
-        url     = OSF_NODES
-        params  = {
-            "filter[search]": term,
-            "filter[public]": "true",
-            "page[size]":     config.PAGE_SIZE,
-        }
-        fetched = 0
+    # Hard cap: inspect at most this many nodes per search term regardless of
+    # how many are licensed. Prevents hours-long loops on broad terms like
+    # 'interview transcript' where 99% of results have no license.
+    _MAX_NODES_PER_TERM = 500
 
-        while url and fetched < config.MAX_RECORDS:
+    def _search(self, term: str) -> list[dict]:
+        records       = []
+        url           = OSF_SEARCH
+        params        = {
+            "q":          term,
+            "page[size]": config.PAGE_SIZE,
+        }
+        fetched       = 0   # licensed nodes that produced file records
+        total_checked = 0   # total nodes inspected (hard cap)
+
+        while url and fetched < config.MAX_RECORDS and total_checked < self._MAX_NODES_PER_TERM:
             try:
                 resp = self._get(url, params=params).json()
             except Exception as exc:
                 logger.warning("[OSF] API error: %s", exc)
                 break
 
-            for node in resp.get("data", []):
+            page_nodes = resp.get("data", [])
+            if not page_nodes:
+                break
+
+            for node in page_nodes:
+                if total_checked >= self._MAX_NODES_PER_TERM:
+                    break
+                total_checked += 1
+
                 attrs    = node.get("attributes", {})
                 node_id  = node.get("id", "")
                 node_url = f"https://osf.io/{node_id}/"
                 title    = attrs.get("title", "")
 
-                # Fetch the node's license explicitly — OSF often omits it
+                # Try inline node_license first, then follow relationship link
                 raw_license = (attrs.get("node_license") or {}).get("name", "")
                 if not raw_license:
-                    raw_license = self._fetch_node_license(node_id)
+                    raw_license = self._fetch_node_license(node, node_id)
 
                 ok, clean = self._check_license(raw_license, title=title)
                 if not ok:
                     continue   # no license or unrecognised = skip
 
-                authors  = ""   # contributor fetch would add extra API calls; skip for speed
                 tags     = " | ".join(attrs.get("tags", []))
                 date_pub = (attrs.get("date_created") or "")[:10]
 
                 file_records = self._fetch_files(
                     node_id, node_url, title,
                     attrs.get("description", ""),
-                    authors, date_pub, clean, tags,
+                    "", date_pub, clean, tags,
                 )
                 records.extend(file_records)
                 fetched += 1
@@ -74,18 +86,29 @@ class OSFScraper(BaseScraper):
             url    = resp.get("links", {}).get("next")
             params = {}
 
+        if total_checked >= self._MAX_NODES_PER_TERM:
+            logger.info(
+                "[OSF] '%s' hit node cap (%d) — %d licensed nodes found",
+                term, self._MAX_NODES_PER_TERM, fetched,
+            )
         return records
 
-    def _fetch_node_license(self, node_id: str) -> str:
+    def _fetch_node_license(self, node: dict, node_id: str) -> str:
+        """Follow the relationships.license link for the actual license name."""
         try:
-            data = self._get(f"https://api.osf.io/v2/nodes/{node_id}/").json()
-            return (
-                data.get("data", {})
-                    .get("attributes", {})
-                    .get("node_license", {}) or {}
-            ).get("name", "")
+            lic_url = (
+                node.get("relationships", {})
+                    .get("license", {})
+                    .get("links", {})
+                    .get("related", {})
+                    .get("href", "")
+            )
+            if lic_url:
+                data = self._get(lic_url).json()
+                return data.get("data", {}).get("attributes", {}).get("name", "")
         except Exception:
-            return ""
+            pass
+        return ""
 
     def _fetch_files(
         self, node_id, node_url, title, description,

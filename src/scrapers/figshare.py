@@ -38,7 +38,14 @@ class FigshareScraper(BaseScraper):
                 "page_size":  config.PAGE_SIZE,
             }
             try:
-                articles = self._get(FIGSHARE_SEARCH, params=params).json()
+                resp = self.session.post(
+                    FIGSHARE_SEARCH,
+                    json={"search_for": term, "item_type": 3,
+                          "page": page, "page_size": config.PAGE_SIZE},
+                    timeout=config.REQUEST_TIMEOUT,
+                )
+                resp.raise_for_status()
+                articles = resp.json()
             except Exception as exc:
                 logger.warning("[Figshare] Search error page %d: %s", page, exc)
                 break
