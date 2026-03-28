@@ -19,3 +19,10 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Downloaded research data — too large for GitHub (some files > 100 MB)
+data/downloads/
+
+# SQLite WAL/SHM temp files
+data/*.db-shm
+data/*.db-wal

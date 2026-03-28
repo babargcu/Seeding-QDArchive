@@ -3393,3 +3393,101 @@
 2026-03-28 16:21:20  WARNING   [OSF] File error for node ym3n9: 401 Client Error: Unauthorized for url: https://api.osf.io/v2/nodes/ym3n9/files/osfstorage/
 2026-03-28 16:27:58  INFO      [OSF] 'thematic analysis' -> 198 records with open licenses
 2026-03-28 16:27:59  INFO      [OSF] Searching: 'discourse analysis'
+2026-03-28 16:32:26  WARNING   [OSF] File error for node 4hqa9: 502 Server Error: Bad Gateway for url: https://api.osf.io/v2/nodes/4hqa9/files/osfstorage/
+2026-03-28 16:33:10  WARNING   [OSF] API error: HTTPSConnectionPool(host='api.osf.io', port=443): Read timed out. (read timeout=30)
+2026-03-28 16:33:10  INFO      [OSF] 'discourse analysis' -> 94 records with open licenses
+2026-03-28 16:33:11  INFO      [OSF] Searching: 'narrative research'
+2026-03-28 16:34:11  WARNING   [OSF] File error for node 4ygdv: 401 Client Error: Unauthorized for url: https://api.osf.io/v2/nodes/4ygdv/files/osfstorage/
+2026-03-28 16:35:25  WARNING   [OSF] File error for node kfgjh: HTTPSConnectionPool(host='api.osf.io', port=443): Read timed out. (read timeout=30)
+2026-03-28 16:40:56  WARNING   [OSF] File error for node m5dgf: 401 Client Error: Unauthorized for url: https://api.osf.io/v2/nodes/m5dgf/files/osfstorage/
+2026-03-28 16:41:07  WARNING   [OSF] API error: 502 Server Error: Bad Gateway for url: https://api.osf.io/v2/search/projects/?page=33&page%5Bsize%5D=25&q=narrative+research
+2026-03-28 16:41:07  INFO      [OSF] 'narrative research' -> 279 records with open licenses
+2026-03-28 16:41:08  INFO      [OSF] Searching: 'qualitative coding'
+2026-03-28 16:46:37  WARNING   [OSF] File error for node ym3n9: 401 Client Error: Unauthorized for url: https://api.osf.io/v2/nodes/ym3n9/files/osfstorage/
+2026-03-28 16:49:16  INFO      [OSF] 'qualitative coding' -> 319 records with open licenses
+2026-03-28 16:49:17  INFO      [OSF] Total unique records: 2412
+2026-03-28 16:49:24  INFO      [OSF] Done — 2412 new records inserted (found 2412 total)
+2026-03-28 17:04:23  INFO      [CIS] Probe found 113 additional studies (total: 113)
+2026-03-28 17:04:32  INFO      === Download phase (scope=text, budget=1800 MB) ===
+    To download : 11110 files
+    Media skipped (URL saved): 94
+2026-03-28 17:04:34  WARNING   Failed to download https://zenodo.org/records/12345/files/test.qdpx: 404 Client Error: NOT FOUND for url: https://zenodo.org/records/12345/files/test.qdpx
+2026-03-28 17:04:47  INFO      Downloaded: EFL_ILP_ScopingReview_CodedData_20250718.qdpx  (used 67.5 / 1800 MB)
+2026-03-28 17:04:55  INFO      Downloaded: Polish debates on higher education party manifestos.mx20  (used 103.6 / 1800 MB)
+2026-03-28 17:05:00  INFO      Downloaded: Polish debates on higher education party manifestos.mx22  (used 146.0 / 1800 MB)
+2026-03-28 17:05:02  WARNING   Skipping 1_PLANET4B_QDPXProject-BusinessModels_Pisa_20250919_Qualitative-Analysis-Project.qdpx — 142.2 MB exceeds per-file limit of 100 MB
+2026-03-28 17:05:16  INFO      Downloaded: 23_PLANET4B_QDPXProject-FrameAnalysis_Pisa_20250514_Qualitative-Analysis-Project.qdpx  (used 238.5 / 1800 MB)
+2026-03-28 17:05:18  INFO      Downloaded: KPI - cycle de validation.nvpx  (used 244.0 / 1800 MB)
+2026-03-28 17:05:26  INFO      Downloaded: eCape Energy crisis - anonymisering - final.nvp  (used 288.4 / 1800 MB)
+2026-03-28 17:05:27  WARNING   Skipping 2005 plan.nvp — 110.9 MB exceeds per-file limit of 100 MB
+2026-03-28 17:05:36  INFO      Downloaded: 1968 plan.nvp  (used 341.2 / 1800 MB)
+2026-03-28 17:05:42  INFO      Downloaded: 2018 plan.nvp  (used 370.9 / 1800 MB)
+2026-03-28 17:05:44  INFO      Downloaded: Memes Project.qdpx  (used 374.0 / 1800 MB)
+2026-03-28 17:05:45  WARNING   Skipping SLR_Analysis_updated_2023.nvp — 148.8 MB exceeds per-file limit of 100 MB
+2026-03-28 17:05:46  WARNING   Skipping SLR_Analysis_updated_2023_for_MAC.nvpx — 135.2 MB exceeds per-file limit of 100 MB
+2026-03-28 17:05:48  INFO      Downloaded: 1 - Constructive turn - Nvivo project file (Mac).qdpx  (used 375.2 / 1800 MB)
+2026-03-28 17:05:52  INFO      Downloaded: Dr_Akinyemi_PhD_Updated_19_6_27042020.nvp  (used 389.7 / 1800 MB)
+2026-03-28 17:06:01  INFO      Downloaded: Midstream and downstream behavioural patterns.nvp  (used 434.3 / 1800 MB)
+2026-03-28 17:06:04  INFO      Downloaded: Upstream behavioural patterns.nvp  (used 448.7 / 1800 MB)
+2026-03-28 17:06:05  WARNING   Skipping Evidence of controversies.nvp — 335.6 MB exceeds per-file limit of 100 MB
+2026-03-28 17:06:06  WARNING   Skipping Salini Impregilo Sustainability Discourses.nvp — 107.2 MB exceeds per-file limit of 100 MB
+2026-03-28 17:06:11  INFO      Downloaded: Amazon Dataset.qdpx  (used 470.3 / 1800 MB)
+2026-03-28 17:06:27  INFO      Downloaded: Genetic Companies Dataset.atlproj  (used 564.1 / 1800 MB)
+2026-03-28 17:06:33  INFO      Downloaded: Amazon Dataset.atlproj  (used 588.2 / 1800 MB)
+2026-03-28 17:06:53  INFO      Downloaded: Genetic Companies Dataset.qdpx  (used 681.1 / 1800 MB)
+2026-03-28 17:07:06  INFO      Downloaded: JBE_SocialEntrepreneurship_network analysis (Ad_lie Ranville 2021-05-14).atlproj  (used 762.3 / 1800 MB)
+2026-03-28 17:07:21  INFO      Downloaded: Analisi testuale.qdpx  (used 828.7 / 1800 MB)
+2026-03-28 17:07:25  INFO      Downloaded: FF1_B_QIA_in_MAXQDA_public.mx24  (used 845.6 / 1800 MB)
+2026-03-28 17:07:29  INFO      Downloaded: voluntariado_exemplo_MAXQDA_V4.mx24  (used 858.6 / 1800 MB)
+2026-03-28 17:07:33  INFO      Downloaded: LLM_lowcode.mx20  (used 875.7 / 1800 MB)
+2026-03-28 17:07:36  INFO      Downloaded: Traditional_lowcode.mx20  (used 885.7 / 1800 MB)
+2026-03-28 17:07:38  INFO      Downloaded: Populism Morocco Spain border MAXQDA code v2 25 may 2023.mx20  (used 892.5 / 1800 MB)
+2026-03-28 17:07:40  INFO      Downloaded: SBOM data analysis_backup-20230125-232849.mx22  (used 894.2 / 1800 MB)
+2026-03-28 17:07:42  INFO      Downloaded: SBOM data analysis_backup-20230124-215119.mx22  (used 895.6 / 1800 MB)
+2026-03-28 17:07:47  INFO      Downloaded: Asghari edited.mx20  (used 921.0 / 1800 MB)
+2026-03-28 17:07:50  INFO      Downloaded: Populism Abbas Netanyahu Speeches at UNGA 2010-19 MAXQDA code.mx20  (used 927.6 / 1800 MB)
+2026-03-28 17:07:53  INFO      Downloaded: Data Labelling _ Encoding.mx20  (used 937.3 / 1800 MB)
+2026-03-28 17:07:56  INFO      Downloaded: IoT Roadmap - Final Coding.qdp  (used 946.0 / 1800 MB)
+2026-03-28 17:07:57  WARNING   Skipping Local Biodiversity Action Plans.qdpx — 1636.4 MB exceeds per-file limit of 100 MB
+2026-03-28 17:07:58  WARNING   Skipping National Level Policies.qdpx — 167.6 MB exceeds per-file limit of 100 MB
+2026-03-28 17:07:59  WARNING   Skipping County and City Level Policies.qdpx — 793.4 MB exceeds per-file limit of 100 MB
+2026-03-28 17:08:00  WARNING   Skipping Publish or Perish Maxquda.mx24 — 125.8 MB exceeds per-file limit of 100 MB
+2026-03-28 17:08:03  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/10085563: 403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/access/datafile/10085563
+2026-03-28 17:08:06  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/4291450: 403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/access/datafile/4291450
+2026-03-28 17:08:09  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/4213956: 403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/access/datafile/4213956
+2026-03-28 17:08:52  INFO      Downloaded: afd_skepticism_qda_replic.nvpx  (used 1167.9 / 1800 MB)
+2026-03-28 17:09:57  INFO      Downloaded: Nvivo file _ Press data_ European Commission_ DG Trade_ 1989-2025.nvpx  (used 1656.8 / 1800 MB)
+2026-03-28 17:10:01  INFO      Downloaded: coding interview data ____NVivo__.nvpx  (used 1662.2 / 1800 MB)
+2026-03-28 17:10:04  INFO      Downloaded: PhD_Fieldwork Analysis_Konya.nvpx  (used 1670.5 / 1800 MB)
+2026-03-28 17:10:08  INFO      Downloaded: PhD_Fieldwork Analysis.nvpx  (used 1677.5 / 1800 MB)
+2026-03-28 17:10:11  INFO      Downloaded: PhD_Fieldwork Analysis_Urfa.nvpx  (used 1685.2 / 1800 MB)
+2026-03-28 17:11:17  INFO      Downloaded: Commodifying Compassion USAID Nvivo Database.nvp  (used 2125.8 / 1800 MB)
+2026-03-28 17:11:18  WARNING   Budget reached — stopping. Storage budget of 1800 MB fully used.
+2026-03-28 17:11:18  INFO      Download done — 2125.8 MB used of 1800 MB budget
+2026-03-28 17:11:26  INFO      CSV exported -> C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260328_161118.csv
+2026-03-28 17:11:26  INFO      Pipeline complete — total=5464  downloaded=45  sources=9  licenses=18
+2026-03-28 18:50:53  INFO      [CIS] Total unique records: 268
+2026-03-28 18:50:54  INFO      [CIS] Done — 268 new records inserted (found 268 total)
+2026-03-28 18:50:54  INFO      === Download phase (scope=qda-only, budget=200 MB) ===
+    To download : 65 files
+    Media skipped (URL saved): 94
+2026-03-28 18:50:54  WARNING   Failed to download https://zenodo.org/records/12345/files/test.qdpx: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /records/12345/files/test.qdpx (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:50:55  WARNING   Failed to download https://zenodo.org/api/records/17360366/files/1_PLANET4B_QDPXProject-BusinessModels_Pisa_20250919_Qualitative-Analysis-Project.qdpx/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/17360366/files/1_PLANET4B_QDPXProject-BusinessModels_Pisa_20250919_Qualitative-Analysis-Project.qdpx/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:50:56  WARNING   Failed to download https://zenodo.org/api/records/13750800/files/2005 plan.nvp/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/13750800/files/2005%20plan.nvp/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:50:58  WARNING   Failed to download https://zenodo.org/api/records/10557144/files/SLR_Analysis_updated_2023.nvp/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/10557144/files/SLR_Analysis_updated_2023.nvp/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:50:59  WARNING   Failed to download https://zenodo.org/api/records/10557144/files/SLR_Analysis_updated_2023_for_MAC.nvpx/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/10557144/files/SLR_Analysis_updated_2023_for_MAC.nvpx/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:00  WARNING   Failed to download https://zenodo.org/api/records/4392862/files/Evidence of controversies.nvp/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/4392862/files/Evidence%20of%20controversies.nvp/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:01  WARNING   Failed to download https://zenodo.org/api/records/4392862/files/Salini Impregilo Sustainability Discourses.nvp/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/4392862/files/Salini%20Impregilo%20Sustainability%20Discourses.nvp/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:02  WARNING   Failed to download https://zenodo.org/api/records/18909240/files/Local Biodiversity Action Plans.qdpx/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/18909240/files/Local%20Biodiversity%20Action%20Plans.qdpx/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:03  WARNING   Failed to download https://zenodo.org/api/records/18909240/files/National Level Policies.qdpx/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/18909240/files/National%20Level%20Policies.qdpx/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:04  WARNING   Failed to download https://zenodo.org/api/records/18909240/files/County and City Level Policies.qdpx/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/18909240/files/County%20and%20City%20Level%20Policies.qdpx/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:05  WARNING   Failed to download https://zenodo.org/api/records/18900800/files/Publish or Perish Maxquda.mx24/content: HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/18900800/files/Publish%20or%20Perish%20Maxquda.mx24/content (Caused by NameResolutionError("HTTPSConnection(host='zenodo.org', port=443): Failed to resolve 'zenodo.org' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:06  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/10085563: HTTPSConnectionPool(host='dataverse.harvard.edu', port=443): Max retries exceeded with url: /api/access/datafile/10085563 (Caused by NameResolutionError("HTTPSConnection(host='dataverse.harvard.edu', port=443): Failed to resolve 'dataverse.harvard.edu' ([Errno 11001] getaddrinfo failed)"))
+2026-03-28 18:51:10  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/4291450: 403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/access/datafile/4291450
+2026-03-28 18:51:13  WARNING   Failed to download https://dataverse.harvard.edu/api/access/datafile/4213956: 403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/access/datafile/4213956
+2026-03-28 18:51:19  INFO      Downloaded: Qualitative_Data_NVivo.nvp  (used 5.6 / 200 MB)
+2026-03-28 18:53:16  INFO      Downloaded: EUCommission_PressData_HarvardDataverse.nvpx  (used 472.6 / 200 MB)
+2026-03-28 18:53:17  WARNING   Budget reached — stopping. Storage budget of 200 MB fully used.
+2026-03-28 18:53:17  INFO      Download done — 472.6 MB used of 200 MB budget
+2026-03-28 18:53:22  INFO      CSV exported -> C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260328_175317.csv
+2026-03-28 18:53:22  INFO      Pipeline complete — total=5732  downloaded=47  sources=10  licenses=19
