@@ -149,7 +149,7 @@ def run(
     # ── Phase 2: Download ──────────────────────────────────────────────────────
     if download:
         budget = budget_mb or config.STORAGE_BUDGET_MB
-        rows, media_count = get_pending_files(conn, downloadable_exts)
+        rows, media_count = get_pending_files(conn, downloadable_exts, sources=sources)
 
         logger.info(
             "=== Download phase (scope=%s, budget=%d MB) ===\n"

@@ -3491,3 +3491,27 @@
 2026-03-28 18:53:17  INFO      Download done — 472.6 MB used of 200 MB budget
 2026-03-28 18:53:22  INFO      CSV exported -> C:\Users\Babar\Desktop\Seeding-QDArchive\reports\metadata_20260328_175317.csv
 2026-03-28 18:53:22  INFO      Pipeline complete — total=5732  downloaded=47  sources=10  licenses=19
+2026-04-03 22:22:35  INFO      === Download phase (scope=qda-only, budget=50 MB) ===
+    To download : 7 files
+    Media skipped (URL saved): 94
+2026-04-03 22:25:34  INFO      Downloaded: International Criminal Law Charging Document Database v7.qdpx  (used 857.6 / 50 MB)
+2026-04-03 22:25:35  WARNING   Budget reached — stopping. Storage budget of 50 MB fully used.
+2026-04-03 22:25:35  INFO      Download done — 857.6 MB used of 50 MB budget
+2026-04-03 22:25:35  INFO      Pipeline complete — total=5732  downloaded=48  sources=10  licenses=19
+2026-04-03 22:25:38  INFO      === Download phase (scope=qda-only, budget=20 MB) ===
+    To download : 1 files
+    Media skipped (URL saved): 94
+2026-04-03 22:25:39  WARNING   Failed to download https://dataverse.no/api/access/datafile/116293: 403 Client Error: Forbidden for url: https://dataverse.no/api/access/datafile/116293
+2026-04-03 22:25:40  INFO      Download done — 0.0 MB used of 20 MB budget
+2026-04-03 22:25:41  INFO      Pipeline complete — total=5732  downloaded=48  sources=10  licenses=19
+2026-04-03 22:25:57  INFO      === Download phase (scope=qda-only, budget=200 MB) ===
+    To download : 6 files
+    Media skipped (URL saved): 94
+2026-04-03 22:26:23  INFO      Downloaded: MAGMA Poetry.nvpx  (used 86.2 / 200 MB)
+2026-04-03 22:26:36  INFO      Downloaded: Evaluation in film reviews_ANNOTATED CORPUS.nvp  (used 138.6 / 200 MB)
+2026-04-03 22:26:47  INFO      Downloaded: Evaluation in film reviews_ANNOTATED CORPUS-FOR MAC.nvpx  (used 169.4 / 200 MB)
+2026-04-03 22:26:49  WARNING   Skipping Annotated Enron Trader Tapes Corpus_NVIVO MAC (NVivo 14 R14.23.0).nvpx — 33.3 MB would exceed remaining budget of 30.6 MB
+2026-04-03 22:26:51  WARNING   Skipping Annotated Enron Trader Tapes Corpus_NVIVO WINDOWS (NVivo R14.23.1).nvp — 189.6 MB exceeds per-file limit of 100 MB
+2026-04-03 22:26:53  WARNING   Skipping Life After Meningitis.nvp — 35.2 MB would exceed remaining budget of 30.6 MB
+2026-04-03 22:26:54  INFO      Download done — 169.4 MB used of 200 MB budget
+2026-04-03 22:26:54  INFO      Pipeline complete — total=5732  downloaded=51  sources=10  licenses=19

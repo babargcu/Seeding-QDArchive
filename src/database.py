@@ -181,14 +181,29 @@ def mark_downloaded(conn: sqlite3.Connection, file_id: int, local_path: str):
     conn.commit()
 
 
-def get_pending_files(conn: sqlite3.Connection, downloadable_exts: set[str]) -> list:
+def get_pending_files(
+    conn: sqlite3.Connection,
+    downloadable_exts: set[str],
+    sources: list[str] | None = None,
+) -> list:
     """
     Return all pending files whose type matches the download scope,
     prioritising QDA files.
+
+    Args:
+        sources: Optional list of repository names to restrict downloads to.
+                 None = all sources.
     """
     ext_csv   = ", ".join(f"'{e.lstrip('.')}'" for e in downloadable_exts)
     qda_csv   = ", ".join(f"'{e.lstrip('.')}'" for e in config.QDA_EXTENSIONS)
     media_csv = ", ".join(f"'{e.lstrip('.')}'" for e in config.MEDIA_EXTENSIONS)
+
+    source_filter = ""
+    params: list = []
+    if sources:
+        placeholders = ", ".join("?" * len(sources))
+        source_filter = f"AND r.name IN ({placeholders})"
+        params.extend(sources)
 
     rows = conn.execute(f"""
         SELECT
@@ -200,13 +215,15 @@ def get_pending_files(conn: sqlite3.Connection, downloadable_exts: set[str]) -> 
             p.download_project_folder
         FROM   files f
         JOIN   projects p ON f.project_id = p.id
+        JOIN   repositories r ON p.repository_id = r.id
         WHERE  f.status = 'PENDING'
           AND  f.download_url != ''
           AND  f.file_type IN ({ext_csv})
+          {source_filter}
         ORDER BY
                CASE WHEN f.file_type IN ({qda_csv}) THEN 0 ELSE 1 END,
                f.id
-    """).fetchall()
+    """, params).fetchall()
 
     media_count = conn.execute(
         f"SELECT COUNT(*) FROM files WHERE file_type IN ({media_csv})"

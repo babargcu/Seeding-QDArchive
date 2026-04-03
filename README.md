@@ -34,7 +34,8 @@ DataFirst (UCT)     ──┘
 | PDFs, transcripts, spreadsheets | Metadata + URL saved only |
 | Audio / Video | Metadata + URL saved only — **never downloaded** |
 
-- Storage hard-stops at **2 GB** by default
+- Storage hard-stops at **2 GB** by default (`--budget` to change)
+- Individual files larger than **100 MB** are **automatically skipped** — their metadata and URL are saved to the DB but the file is not downloaded; their status stays `PENDING` in the `files` table
 - Records with no open license are **skipped entirely**
 
 ---
@@ -156,6 +157,14 @@ python main.py --help
 | `data/downloads/` | Downloaded QDA files, organised by source |
 | `pipeline.log` | Full log with errors and warnings |
 
+**Why do some files stay PENDING?**
+
+Files remain `PENDING` in the `files` table for two reasons:
+1. **Too large** — files over 100 MB are automatically skipped to protect disk space. Their URL is saved so you can download them manually if needed.
+2. **Not attempted yet** — the download phase hasn't been run, or the storage budget was reached before getting to them.
+
+To see which large files were skipped, check `pipeline.log` for lines containing `exceeds per-file limit`.
+
 ---
 
 ## Project structure
@@ -248,7 +257,7 @@ Normalized SQLite database at `data/metadata.db`. Exported as a flat CSV to `rep
 | `download_url` | Direct file URL |
 | `file_size` | Size in bytes |
 | `local_path` | Relative path after download |
-| `status` | `PENDING` / `SUCCESS` / `FAILED` / `SKIPPED` |
+| `status` | `PENDING` — not yet downloaded (includes files skipped for being over 100 MB) · `SUCCESS` — downloaded · `FAILED` — download errored · `SKIPPED` — intentionally excluded |
 
 ### Other tables
 
