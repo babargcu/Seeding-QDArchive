@@ -57,7 +57,7 @@ DataFirst (UCT)     ──┘
 Open **Command Prompt**, then:
 
 ```cmd
-cd "C:\Users\Babar\Desktop\Seeding-QDArchive"
+cd "Seeding-QDArchive"
 
 python -m venv .venv
 .venv\Scripts\activate
