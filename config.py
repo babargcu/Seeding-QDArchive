@@ -16,7 +16,7 @@ load_dotenv()
 # ── Paths ──────────────────────────────────────────────────────────────────────
 BASE_DIR   = Path(__file__).parent
 DATA_DIR   = BASE_DIR / "data" / "downloads"
-DB_PATH    = BASE_DIR / "data" / "metadata.db"
+DB_PATH    = BASE_DIR / "data" / "23217747-seeding.db"
 REPORT_DIR = BASE_DIR / "reports"
 DOCS_DIR   = BASE_DIR / "docs"
 

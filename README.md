@@ -14,7 +14,7 @@ This repository implements **Part 1: Data Acquisition**.
 ```
 Scrape metadata (parallel)     Download files        Export
 ──────────────────────────     ──────────────        ──────
-Zenodo              ──┐        QDA files only        metadata.db
+Zenodo              ──┐        QDA files only        23217747-seeding.db
 Dryad               ──┤        (.qdpx, .nvp,         └──▶ reports/*.csv
 Harvard Dataverse   ──┤──▶ DB ─▶ .atlproj, …)
 Harvard Murray Arch ──┤        Audio/video:
@@ -90,7 +90,7 @@ python main.py --no-download --sources Zenodo
 ### Test B — Verify the database
 
 ```cmd
-python -c "import sqlite3; conn = sqlite3.connect('data/metadata.db'); print(conn.execute('SELECT r.name, COUNT(*) FROM projects p JOIN repositories r ON p.repository_id=r.id GROUP BY r.name').fetchall())"
+python -c "import sqlite3; conn = sqlite3.connect('data/23217747-seeding.db'); print(conn.execute('SELECT r.name, COUNT(*) FROM projects p JOIN repositories r ON p.repository_id=r.id GROUP BY r.name').fetchall())"
 ```
 
 Expected output: something like `[('Zenodo', 34)]`
@@ -223,7 +223,7 @@ See `docs/sources.md` for full notes on each source.
 
 ## Database schema
 
-Normalized SQLite database at `data/metadata.db`. Exported as a flat CSV to `reports/` after each run.
+Normalized SQLite database at `data/23217747-seeding.db`. Exported as a flat CSV to `reports/` after each run.
 
 **Tables:** `repositories` → `projects` → `files`, `keywords`, `person_role`, `licenses`
 
